@@ -1,0 +1,12 @@
+%br
+.container-fluid
+  .col-md-4
+    .row
+      =render 'routines/tasks'
+    .row
+      .panel.panel-warning
+        .panel-heading
+          %span
+            =render 'routines/stats'
+  .col-md-8
+    .calendar

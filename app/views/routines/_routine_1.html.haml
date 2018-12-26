@@ -1,0 +1,35 @@
+.panel.panel-warning{id: "routine#{@i}","aria-describedby" => "popover66283", "data-container" => "body", "data-content" => @routine.purpose, "data-original-title" => "", "data-placement" => "right", "data-toggle" => "popover", title: "", type: "button"} 
+  .panel-body{:style => "height: 400px"}
+    .row
+      %h1.text-center= @routine.title
+    .row
+      %p
+        = @routine.days
+        Tasks 
+    
+    :javascript
+      $(function ()  
+        {
+          $('#routine#{@i}').popover(
+            {
+              trigger: 'hover',
+              html: true
+            });
+        });
+  -#unless i%3==2
+    .col-md-1
+  -#%tr
+    %td= @routine.title
+    %td= @routine.purpose
+    %td= @routine.resources
+    %td= @routine.weeks
+    %td= @routine.days
+    %td= @routine.hours
+    %td= @routine.minutes
+    %td= @routine.user
+    %td= link_to 'Show', routine
+    %td= link_to 'Edit', edit_routine_path(routine)
+    %td= link_to 'Destroy', routine, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+-#.row
+  = link_to 'New Routine', new_routine_path

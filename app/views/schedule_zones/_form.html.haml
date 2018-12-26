@@ -1,0 +1,13 @@
+= form_for @schedule_zone do |f|
+  - if @schedule_zone.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@schedule_zone.errors.count, "error")} prohibited this schedule_zone from being saved:"
+      %ul
+        - @schedule_zone.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :payload
+    = f.text_field :payload
+  .actions
+    = f.submit 'Save'

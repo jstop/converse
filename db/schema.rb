@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170819005825) do
+ActiveRecord::Schema.define(version: 20181226163035) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.datetime "start"
     t.datetime "end"
     t.string   "color"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_events_on_user_id", using: :btree
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.jsonb    "payload"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,10 +35,54 @@ ActiveRecord::Schema.define(version: 20170819005825) do
   create_table "recurring_events", force: :cascade do |t|
     t.string   "title"
     t.date     "anchor"
-    t.integer  "frequency",  limit: 1, default: 0
+    t.integer  "frequency",  limit: 2, default: 0
     t.string   "color"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
+  end
+
+  create_table "routines", force: :cascade do |t|
+    t.string   "title"
+    t.text     "purpose"
+    t.string   "resources"
+    t.integer  "weeks"
+    t.integer  "days"
+    t.integer  "hours"
+    t.integer  "minutes"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_routines_on_user_id", using: :btree
+  end
+
+  create_table "schedule_zones", force: :cascade do |t|
+    t.jsonb    "payload"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "duration"
+    t.string   "description"
+    t.string   "content"
+    t.datetime "deadline"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_tasks_on_user_id", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end

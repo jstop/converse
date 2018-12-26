@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%table
+  %thead
+    %tr
+      %th Title 
+      %th Content Length
+      %th Sections
+      %th Link
+      %th
+
+  %tbody
+    %tr
+      %td= @program.title
+      %td= @program.estimated_content_length_text
+      %td= @program.sections.count
+      %td
+        %a{:href => "#{@program.link}"} link 
+      %td
+
+= link_to 'Back', programs_path

@@ -5,6 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.datetime :start
       t.datetime :end
       t.string :color
+      t.belongs_to :user, index: true
 
       t.timestamps
     end

@@ -1,0 +1,9 @@
+%br
+%h2.text-center Free Time? Add a Program! 
+%br
+- @routines.each_with_index do |routine, i|
+  -@routine = routine
+  -if i%3==0
+    .row
+  .col-md-4
+    =render 'routines/routine'

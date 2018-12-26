@@ -1,0 +1,13 @@
+.panel-body{:style => "height: 400px"}
+  .row
+    %h4
+      Time Reserved:
+    %h5
+      = ((@event_duration + @task_duration)/60).to_i
+      hours
+      = (@event_duration + @task_duration)%60
+      minutes
+     
+  .row
+    %h4
+      Time Available:

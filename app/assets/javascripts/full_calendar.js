@@ -6,15 +6,19 @@ initialize_calendar = function() {
       header: {
         left: 'prev,next today',
         center: 'title',
-        right: 'month,agendaWeek,agendaDay'
+        right: 'agendaDay,agendaWeek,month'
       },
+      defaultView: 'agendaDay',
+      nowIndicator: true,
       selectable: true,
       selectHelper: true,
       editable: true,
       eventLimit: true,
+      events: [],
       eventSources: [
         '/events.json',
-        '/recurring_events.json'
+        '/recurring_events.json',
+        '/schedule_zones.json'
       ],
       select: function(start, end) {
         $.getScript('/events/new', function() {
@@ -42,6 +46,12 @@ initialize_calendar = function() {
         });
       },
       
+      eventRender: function(event, element){
+        if (event.start.hours() < 12){
+          $("td [data-date='" + event.start.format("YYYY-MM-DD") + "']").addClass('highlight-red');
+        }
+      },
+
       eventClick: function(event, jsEvent, view) {
         $.getScript(event.edit_url, function() {
           $('#event_date_range').val(moment(event.start).format("MM/DD/YYYY HH:mm") + ' - ' + moment(event.end).format("MM/DD/YYYY HH:mm"))

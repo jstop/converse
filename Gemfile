@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
+gem 'pg'
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -31,3 +32,8 @@ source 'https://rails-assets.org' do
 end
 
 gem 'ice_cube'
+gem 'devise'
+gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped'
+gem 'haml-rails'
+gem 'bootstrap_form'
+gem 'bootswatch-rails'
