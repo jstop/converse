@@ -7,7 +7,7 @@
       %th Content Length
       %th Sections
       %th Link
-      %th
+      %th 
 
   %tbody
     %tr
@@ -17,5 +17,25 @@
       %td
         %a{:href => "#{@program.link}"} link 
       %td
+        = button_to 'Subscribe', subscribe_program_path(@program.id), method: :post
+
+
+%h2 Sections
+%table
+  %thead
+    %tr
+      %th Title 
+      %th Content Length
+      -#%th Description
+      %th Preview 
+
+  %tbody
+    - @program.sections.each do |section|
+      %tr
+        %td= section["title"]
+        %td= section["content_length_text"]
+        -#%td= section["description"]
+        %td
+          %a{:href => "https://udemy.com#{section["items"][0]["preview_url"]}"} Preview 
 
 = link_to 'Back', programs_path

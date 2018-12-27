@@ -18,7 +18,7 @@
         %td= task.name
         %td= task.duration
         %td= task.description
-        %td= task.content
+        %td= button_to 'Begin Task', task.content
         %td= task.deadline
         %td= link_to 'Show', task
         %td= link_to 'Edit', edit_task_path(task)

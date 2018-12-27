@@ -16,4 +16,7 @@ class Program < ApplicationRecord
   def link
     "https://udemy.com#{self.payload["curriculum"]["sections"].first["items"].first["landing_page_url"]}"
   end
+  def sections 
+    payload["curriculum"]["sections"]
+  end
 end

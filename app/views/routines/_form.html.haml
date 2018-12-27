@@ -27,7 +27,7 @@
           .row{style: "margin-top:5px"}
             .btn-group{"data-toggle" => "buttons-checkbox"}
               -Routine::DAYS.each do |day|
-                -if @routine.days.include? day
+                -if @routine.days.nil? != true and @routine.days.include? day
                   %button.btn.btn-primary.active{type: "button", name:"routine[days][]", value: day}=day[0,1]
                 -else
                   %button.btn.btn-primary{type: "button", name:"routine[days][]", value: day}=day[0,1]
@@ -70,7 +70,7 @@
                   pick12HourFormat: true,
                   pickDate: false
                 });
-        .span4
+        -#.span4
           .row-fluid
             .offset1.span11
               .lead
@@ -106,7 +106,7 @@
               .row
                 %input.btn.btn-primary.btn-large.span6{:style => "margin-top:20px", :type => "submit", :value => "Build"}
                   -#@tags = Tag.all(name: @routine.tags).to_json.gsub "_id", "id"
-#myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+-##myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-header
     %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
     %h3#myModalLabel Add a Tag

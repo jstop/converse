@@ -7,7 +7,6 @@ json.array! events do |event|
 
   json.color recurring_event.color unless recurring_event.color.blank?
   json.allDay false
-  json.rendering "background"
 
   json.update_url recurring_event_path(recurring_event, method: :patch)
   json.edit_url edit_recurring_event_path(recurring_event)

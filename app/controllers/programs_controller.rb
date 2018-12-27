@@ -1,6 +1,36 @@
 class ProgramsController < ApplicationController
   before_action :set_program, only: [:show, :edit, :update, :destroy]
 
+### Custom Routes
+
+  def subscribe
+    @program = Program.find(params[:id])
+    @tasks = []
+    if signed_in?
+      @program.sections.each do |section|
+        @task = Task.new  
+        @task.name = "#{@program.title} - #{section["title"]}"
+        @task.duration = section["content_length_text"]
+        #@task.description = section[""]
+        @task.content = "https://udemy.com#{section["items"][0]["learn_url"]}"
+        @task.user_id = current_user.id
+        unless @task.save
+          respond_to do |format|
+            format.html { render :new }
+            format.json { render json: @task.errors, status: :unprocessable_entity }
+          end
+          exit
+        end
+      end
+      respond_to do |format|
+        format.html { redirect_to @program, notice: 'Program was successfully created.' }
+        format.json { render :show, status: :created, location: @program }
+      end
+    end
+  end
+  
+####
+  
   # GET /programs
   # GET /programs.json
   def index
@@ -60,7 +90,6 @@ class ProgramsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_program

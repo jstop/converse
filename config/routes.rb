@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :schedule_zones
-  resources :programs
+  resources :programs do
+    post :subscribe, on: :member
+  end
+  #post '/programs/subscribe/:id', to: 'programs#subscribe'
   resources :tasks
   devise_for :users
   get :protected, to: 'users#protected'
