@@ -19,11 +19,9 @@
         %td= program.estimated_content_length_text
         %td= program.sections.count
         %td
-          %a{:href => "#{program.link}"} link 
         %td
         %td
         %td= link_to 'Show', program
-        %td= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

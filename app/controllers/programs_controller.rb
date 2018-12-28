@@ -22,6 +22,9 @@ class ProgramsController < ApplicationController
           exit
         end
       end
+
+      @program.add_subscriber current_user.id
+
       respond_to do |format|
         format.html { redirect_to @program, notice: 'Program was successfully created.' }
         format.json { render :show, status: :created, location: @program }

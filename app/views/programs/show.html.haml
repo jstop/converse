@@ -1,5 +1,9 @@
 %p#notice= notice
 
+%h3
+  Used by 
+  =@program.num_subscribed
+  users
 %table
   %thead
     %tr
@@ -15,7 +19,7 @@
       %td= @program.estimated_content_length_text
       %td= @program.sections.count
       %td
-        %a{:href => "#{@program.link}"} link 
+        = button_to "Visit Program Site", @program.link
       %td
         = button_to 'Subscribe', subscribe_program_path(@program.id), method: :post
 
