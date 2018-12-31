@@ -1,10 +1,29 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
+  def complete
+    @task = Task.find(params[:id])
+    @task.completed = true
+    @task.completed_time = DateTime.now
+    respond_to do |format|
+      if @task.save
+        format.html { redirect_back fallback_location: { action: "show", id: @task.id}, notice: 'Task Completed' }
+        format.json { render :show, status: :created, location: @task }
+      else
+        format.html { render :new }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    if params[:today]
+      @tasks = Task.where(completed: nil, deadline: Date.yesterday..Date.tomorrow)
+    else
+      @tasks = Task.all
+    end
   end
 
   # GET /tasks/1
@@ -72,6 +91,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:name, :duration, :description, :content, :deadline)
+      params.require(:task).permit(:name, :duration, :date_time, :description, :content, :deadline)
     end
 end

@@ -1,0 +1,8 @@
+{
+  "name": "Weekend Morning Routine",
+  "created_on": "2018-12-26T00:00:00",
+  "color": "green",
+  "days": ["saturday","sunday"],
+  "start_time": "09:00",
+  "end_time": "10:00"
+}

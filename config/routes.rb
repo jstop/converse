@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   resources :programs do
     post :subscribe, on: :member
   end
-  #post '/programs/subscribe/:id', to: 'programs#subscribe'
-  resources :tasks
+  resources :tasks do
+    post :complete, on: :member
+  end
+
   devise_for :users
   get :protected, to: 'users#protected'
   get '/routines/schedule' => 'routines#schedule'

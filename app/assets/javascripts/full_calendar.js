@@ -1,6 +1,6 @@
 var initialize_calendar;
 initialize_calendar = function() {
-  $('.calendar').each(function(){
+  $('.fullcalendar').each(function(){
     var calendar = $(this);
     calendar.fullCalendar({
       header: {

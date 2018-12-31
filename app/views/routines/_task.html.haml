@@ -1,5 +1,17 @@
-.panel.panel-danger
+.panel{ "class": "#{@task.status_class}"}
   .panel-heading
-    =@task.name
+    =link_to @task.name, edit_task_path(@task)
   .panel-body
+    Estimated Time:
+    =@task.duration
+    minutes
+    %br
+    Deadline:
+    =@task.deadline.strftime("%A %m/%d %l:%M %p")
+    %br
     =@task.description
+    %br
+    - unless @task.content.nil? or @task.content == ""
+      = button_to "Link", @task.content
+    %br
+    = button_to 'Mark Complete', complete_task_path(@task.id), method: :post

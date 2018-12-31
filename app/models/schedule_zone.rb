@@ -6,7 +6,11 @@ class ScheduleZone < ApplicationRecord
   end
 
   def color
-    "red"
+    self.payload["color"]
+  end
+
+  def days
+    self.payload["days"]
   end
 
   def start_hour
@@ -25,7 +29,7 @@ class ScheduleZone < ApplicationRecord
   def schedule
     @schedule ||= begin
       schedule = IceCube::Schedule.new(now = created_on)
-      schedule.add_recurrence_rule IceCube::Rule.weekly(1).day(:monday, :tuesday, :wednesday, :thursday, :friday)
+      schedule.add_recurrence_rule IceCube::Rule.weekly(1).day(*self.days.map { |x| x.to_sym })
       schedule
     end
   end

@@ -10,16 +10,17 @@ class RoutinesController < ApplicationController
 
   def schedule 
     @routines = Routine.all
-    @tasks = Task.all
-    @user_tasks = Task.where(:user_id => current_user.id)
-    @user_events = Event.where(:user_id => current_user.id, start: Date.today..Date.tomorrow)
-    @event_duration = @task_duration = 0 
-    @user_events.each do |event|
-      @event_duration += event.duration
-    end
-    @user_tasks.each do |task|
-      @task_duration += task.duration
-    end
+    @tasks = Task.where(:user_id => current_user.id, :completed => nil)
+
+    #@user_tasks = Task.where(:user_id => current_user.id)
+#    @user_events = Event.where(:user_id => current_user.id, start: Date.today..Date.tomorrow)
+#    @event_duration = @task_duration = 0 
+#    @user_events.each do |event|
+#      @event_duration += event.duration
+#    end
+#    @user_tasks.each do |task|
+#      @task_duration += task.duration
+#    end
     @events = Event.where(:user_id => current_user.id, start: params[:start]..params[:end])
     @default_start = DateTime.now.tomorrow.noon.strftime("%m/%d/%Y %I:%M %p")
   end

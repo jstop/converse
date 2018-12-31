@@ -1,13 +1,10 @@
 .panel-body{:style => "height: 400px"}
   .row
-    %h4
-      Time Reserved:
-    %h5
-      = ((@event_duration + @task_duration)/60).to_i
-      hours
-      = (@event_duration + @task_duration)%60
-      minutes
-     
+    %h4 
+      Time Left Today: 
+      %span#timeLeftToday
+
   .row
     %h4
-      Time Available:
+      Time to Complete Tasks:
+      %span#tasksTime
