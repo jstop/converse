@@ -1,18 +1,86 @@
-= simple_form_for @task do |f|
-  - if @task.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@task.errors.count, "error")} prohibited this task from being saved:"
-      %ul
-        - @task.errors.full_messages.each do |message|
-          %li= message
-
+= simple_form_for @task, remote: true do |f|
   .form-inputs
-    = f.input :name
-    = f.input :duration, as: :integer
-    = f.input :description
-    = f.input :content
-    = f.input :date_time, input_html: { class: "form-control input-sm date-picker"}
-    = f.input_field :deadline, as: :hidden, value: @task.deadline, class: 'form-control input-sm task-deadline-hidden'
 
-    .actions
-      = f.submit 'Save'
+    .row
+      .col-md-8
+        = f.input :name
+    .row
+      .col-md-12
+        = f.input :description, as: :text
+
+    .row
+      .col-md-12
+        = f.input :content, as: :text
+
+    .row
+      .col-md-6
+        = f.input :due_date, input_html: { class: "form-control input-sm date-picker"}
+      .col-md-6
+
+    .row
+      .col-md-6
+        = f.input_field :deadline, as: :hidden, value: "#{@task.deadline.nil? ? Date.today.strftime("%Y-%m-%d %H:%M") : @task.deadline.strftime("%Y-%m-%d %H:%M")}" , class: 'form-control input-sm task-deadline-hidden'
+      .col-md-6
+
+    .row
+      .col-md-6
+        .form-group.string.optional.task_duration
+          %label 
+            Estimate(minutes)
+          .btn-group{"data-toggle" => "buttons"}
+            -@set = false
+            -[30,60,90,120].each do |num|
+              -if @task.duration.nil?
+                %label.btn.btn-primary
+                  %input{ type: :radio, name: "task[duration]", value: "#{num}", id: :task_duration } 
+                    =num
+              -else 
+                -if @task.duration <= num and !@set
+                  -@set = true
+                  %label.btn.btn-primary.active
+                    %input{ type: :radio, name: "task[duration]", value: "#{num}", id: :task_duration } 
+                      =num
+                -else 
+                  %label.btn.btn-primary
+                    %input{ type: :radio, name: "task[duration]", value: "#{num}", id: :task_duration } 
+                      =num
+
+      .col-md-6
+        -#.form-group.string.optional.task_category
+          %label 
+            Category 
+          .btn-group{"data-toggle" => "buttons"}
+            %label.btn.btn-primary
+              %input{ type: :checkbox, name: "task[category][]", value: :sideproject, id: :task_duration1, autocomplete: :off } 
+                sideproject 
+            %label.btn.btn-primary
+              %input{ type: :checkbox, name: "task[category][]", value: :chore, id: :task_duration2, autocomplete: :off } 
+                chore
+            %label.btn.btn-primary
+              %input{ type: :checkbox, name: "task[category][]", value: :fitness , id: :task_duration3, autocomplete: :off } 
+                fitness
+    .row
+      .col-md-6
+        .field
+          = f.label "Area of Expertise"
+          %br
+          = f.collection_check_boxes :category_ids, Category.all, :id, :name do |b|
+            .collection-check-box
+              = b.check_box
+              = b.label
+
+        -#= f.input :categories, as: :check_boxes, collection: [['sideproject', 'sideproject'], ['chore', 'chore'], ['fitness', 'fitness']] 
+
+
+  .form-actions
+    = f.button :submit, 
+      class: 'btn btn-success',              
+      remote: true,     
+      format: :html     
+    = link_to 'Delete',                     
+      @task,                                
+      method: :delete,                      
+      class: 'btn btn-danger',              
+      data: { confirm: 'Are you sure?' },   
+      format: :html,                        
+      remote: true unless @task.new_record? 

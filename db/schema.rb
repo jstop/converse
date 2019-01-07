@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181230210508) do
+ActiveRecord::Schema.define(version: 20190107020105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories_tasks", id: false, force: :cascade do |t|
+    t.integer "category_id", null: false
+    t.integer "task_id",     null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -73,6 +84,16 @@ ActiveRecord::Schema.define(version: 20181230210508) do
     t.boolean  "completed"
     t.datetime "completed_time"
     t.index ["user_id"], name: "index_tasks_on_user_id", using: :btree
+  end
+
+  create_table "time_logs", force: :cascade do |t|
+    t.datetime "datetime"
+    t.string   "log"
+    t.integer  "duration"
+    t.integer  "user_id"
+    t.integer  "task_id"
+    t.index ["task_id"], name: "index_time_logs_on_task_id", using: :btree
+    t.index ["user_id"], name: "index_time_logs_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|

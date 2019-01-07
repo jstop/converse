@@ -2,15 +2,8 @@
 .container-fluid
   .col-md-4
     .row
-      %h4
-        Free Time Left:
-        %span#freeTimeClock
+      =render 'routines/stats'
     .row
       =render 'routines/tasks'
-    .row
-      .panel.panel-warning
-        .panel-heading
-          %span
-            =render 'routines/stats'
   .col-md-8
     .fullcalendar

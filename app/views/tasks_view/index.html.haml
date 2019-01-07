@@ -1,0 +1,57 @@
+%h1 Open Tasks
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Duration
+      %th Description
+      %th Content
+      %th Deadline
+      %th
+      %th
+      %th
+
+  %tbody
+    - @open_tasks.sort_by{ |k| k["deadline"]}.each do |task|
+      %tr
+        %td= task.name
+        %td= task.duration
+        %td= task.description
+        %td= button_to 'Begin Task', task.content
+        %td= task.deadline.to_formatted_s(:long) unless task.deadline.nil?
+        %td= link_to 'Show', task
+        %td= link_to 'Edit', edit_task_path(task)
+        %td= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+%h1 Closed Tasks
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Duration
+      %th Description
+      %th Content
+      %th Deadline
+      %th Completed On
+      %th
+      %th
+      %th
+
+  %tbody
+    - @closed_tasks.sort_by{ |k| k["completed_time"]}.each do |task|
+      %tr
+        %td= task.name
+        %td= task.duration
+        %td= task.description
+        %td= button_to 'Begin Task', task.content
+        %td= task.deadline.to_formatted_s(:long)
+        %td= task.completed_time.to_formatted_s(:long)
+        %td= link_to 'Show', task
+        %td= link_to 'Edit', edit_task_path(task)
+        %td= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
+
+= link_to 'New Task', new_task_path

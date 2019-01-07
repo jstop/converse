@@ -1,25 +1,25 @@
 COMMIT      := $(shell git rev-parse --short HEAD)
 NAMESPACE   := $(shell whoami)
-PKG_NAME    := $(shell node -e "console.log(require('./package.json').name);")
-HELM_FOLDER := $(shell node -e "console.log(require('./package.json').helmConfig.folder)")
+#PKG_NAME    := $(shell node -e "console.log(require('./package.json').name);")
+#HELM_FOLDER := $(shell node -e "console.log(require('./package.json').helmConfig.folder)")
 
 .PHONY: clean open
 
 vars:
-	@echo "PKG_NAME: ${PKG_NAME}"
 	@echo "COMMIT: ${COMMIT}"
 	@echo "NAMESPACE: ${NAMESPACE}"
-	@echo "HELM_FOLDER: ${HELM_FOLDER}"
 
+up:
+	docker-compose up;
 build:
-	yarn
+	docker-compose run web bundle install; docker-compose rm; docker-compose build;
 
 clean:
 	rm -rf node_modules
 
 test:
 	yarn test
-
+	
 docker: build
 	eval $$(minikube docker-env); docker build -t ${PKG_NAME}:latest .; docker tag ${PKG_NAME}:latest ${PKG_NAME}:${COMMIT};
 

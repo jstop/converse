@@ -1,17 +1,35 @@
 .panel{ "class": "#{@task.status_class}"}
   .panel-heading
-    =link_to @task.name, edit_task_path(@task)
-  .panel-body
-    Estimated Time:
-    =@task.duration
-    minutes
-    %br
-    Deadline:
-    =@task.deadline.strftime("%A %m/%d %l:%M %p")
-    %br
-    =@task.description
-    %br
-    - unless @task.content.nil? or @task.content == ""
-      = button_to "Link", @task.content
-    %br
-    = button_to 'Mark Complete', complete_task_path(@task.id), method: :post
+    =@task.name
+    .span.pull-right
+      - unless @task.completed
+        = link_to complete_task_path(@task.id), method: :post do
+          %span.glyphicon.glyphicon-ok{"aria-hidden" => "true"}
+      =link_to '', edit_task_path(@task), class: "glyphicon glyphicon-pencil", remote: true, "data-toggle" => "modal", "data-target" => "edittask"
+      = link_to '',                     
+        @task,                                
+        method: :delete,  
+        class: 'glyphicon glyphicon-trash',
+        data: { confirm: 'Are you sure?' },
+        format: :html,   
+        remote: true unless @task.new_record? 
+  .panel-body{id: "task#{@task.id}","data-toggle"=>"popover", "data-content" => @task.description, "data-placement" => "top"}
+    .row
+      .col-md-7
+        %h4
+          Due:
+          =@task.deadline.strftime("%m/%d %l:%M %p") if @task.deadline
+        %h4
+          =@task.duration
+          minutes
+
+      -# TODO: Add parameter of datetime now from client with tz
+      .col-md-4
+        .btn-toolbar{ "role": "toolbar"}
+          - unless @task.content.nil? or @task.content == ""
+            .btn-group.btn-group-sm{ "role": "group"}
+              = button_to "Content", @task.content, class: "btn btn-xs btn-default"
+        %h4
+          -@task.categories.each do |category|
+            .label.label-warning
+              =category.name

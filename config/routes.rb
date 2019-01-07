@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :categories
   resources :schedule_zones
   resources :programs do
     post :subscribe, on: :member
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   resources :routines
   resources :recurring_events
   resources :events
+  resources :time_logs
   resources :users
   #root 'visitors#index'
   root to: 'routines#index'

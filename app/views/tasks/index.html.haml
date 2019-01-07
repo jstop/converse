@@ -1,29 +1,36 @@
-%h1 Listing tasks
+= button_to new_task_path, class: "btn btn-lg btn-primary pull-right", remote: true, "data-toggle" => "modal", "data-target" => "newtask", method: "get" do
+  %span.glyphicon.glyphicon-plus{"aria-hidden" => "true"}
+  Task
+.row
+  %h1 Open Tasks
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Duration
-      %th Description
-      %th Content
-      %th Deadline
-      %th
-      %th
-      %th
+  -# @open_tasks.sort_by{ |k| k["created_on"]}.each do |task|
+  - @open_tasks.sort_by{ |k| k["deadline"]}.each do |task|
+    -@task = task
+    .col-md-4
+      =render 'routines/task'
+.row
+  %h1 Closed Tasks
 
-  %tbody
-    - @tasks.sort_by{ |k| k["deadline"]}.each do |task|
-      %tr
-        %td= task.name
-        %td= task.duration
-        %td= task.description
-        %td= button_to 'Begin Task', task.content
-        %td= task.deadline.to_formatted_s(:long)
-        %td= link_to 'Show', task
-        %td= link_to 'Edit', edit_task_path(task)
-        %td= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' }
+  - @closed_tasks.sort_by{ |k| k["completed_time"]}.each do |task|
+    -@task = task
+    .col-md-4
+      =render 'routines/task'
+.row
+  %h1 logs
 
-%br
+  - @time_logs.each do |log|
+    -@log = log
+    %p
+      =log.log 
+      =log.datetime
+      =log.duration
 
-= link_to 'New Task', new_task_path
+:javascript
+  $(function () {
+    $('[data-toggle="popover"]').popover(
+      {
+        trigger: 'hover',
+        html: true
+      });
+  });

@@ -23,9 +23,9 @@ group :development do
 end
 
 gem 'bootstrap-sass'
-gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0.2'
 gem 'simple_form'
 gem 'faker'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-fullcalendar'

@@ -9,6 +9,7 @@ date_range_picker = function() {
           format: 'YYYY-MM-DD HH:mm'
         }
     }, function(start, end, label) {
+      console.log("setting hidden values");
       $('.start_hidden').val(start.format('YYYY-MM-DD HH:mm'));
       $('.end_hidden').val(end.format('YYYY-MM-DD HH:mm'));
     });
@@ -29,6 +30,7 @@ date_picker = function() {
         format: 'MMM DD hh:mm'
       }
   }, function(start, end, label) {
+      console.log("setting hidden values");
       $('.task-deadline-hidden').val(start.format('YYYY-MM-DD HH:mm'));
     });
   })

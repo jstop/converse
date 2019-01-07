@@ -1,10 +1,16 @@
-.panel-body{:style => "height: 400px"}
-  .row
-    %h4 
-      Time Left Today: 
-      %span#timeLeftToday
-
-  .row
+.panel.panel-warning
+  .panel-heading 
+    .panel-title
+      %h4 Today
+  .panel-body
     %h4
-      Time to Complete Tasks:
       %span#tasksTime
+      of scheduled tasks left
+    %br
+    %h4
+      Free Time Left:
+      %span#freeTimeClock
+    %br
+    %h4
+      Time for bed in
+      %span#timeLeftToday

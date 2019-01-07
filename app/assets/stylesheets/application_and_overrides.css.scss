@@ -1,6 +1,7 @@
 // import the CSS framework
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
 
 //$bootstrap-sass-asset-helper: false !default;
 
@@ -85,4 +86,10 @@ section {
 }
 #calendar .fc-day.highlight-red{
   background-color: red;
+}
+
+h4  {
+  a {
+    color: #8a6d3b;
+  }
 }

@@ -1,0 +1,19 @@
+$('#remote_container').html('<%= j render "edit" %>');
+$('#edit_task').modal('show');
+
+$('.date-picker').each(function(){
+  $(this).daterangepicker({
+    timePicker: true,
+    singleDatePicker: true,
+    showDropdowns: false,
+    minYear: parseInt(moment().format('YYYY'),10) + 5,
+    maxYear: parseInt(moment().format('YYYY'),10)+10,
+    locale: {
+      format: 'MMM DD hh:mm'
+    }
+  }, function(start, end, label) {
+      console.log("setting hidden values");
+      $('.task-deadline-hidden').val(start.format('YYYY-MM-DD HH:mm'));
+  });
+});
+

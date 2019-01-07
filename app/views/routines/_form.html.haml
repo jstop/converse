@@ -3,7 +3,7 @@
     = f.error_notification
 
     %fieldset
-      %div.row
+      .row
         .span4
           .lead
             Info
@@ -31,44 +31,46 @@
                   %button.btn.btn-primary.active{type: "button", name:"routine[days][]", value: day}=day[0,1]
                 -else
                   %button.btn.btn-primary{type: "button", name:"routine[days][]", value: day}=day[0,1]
-                  
-            :javascript
-              $('#new_routine').submit(function() {
-                  $('#new_routine .btn.active').each(function() {
-                       var input = document.createElement("input");
-                       input.setAttribute("type", "hidden");
-                       input.setAttribute("name", this.name);
-                       input.setAttribute("value", this.value);
-                       document.getElementById("new_routine").appendChild(input);
-                   });
-              }); 
-            :javascript
-              $("#edit_routine_#{@routine.id}").submit(function() {
-                $("#edit_routine_#{@routine.id} .btn.active").each(function() {
+          .row         
+            -
+            = f.button :submit
+          :javascript
+            $('#new_routine').submit(function() {
+                $('#new_routine .btn.active').each(function() {
                      var input = document.createElement("input");
                      input.setAttribute("type", "hidden");
                      input.setAttribute("name", this.name);
                      input.setAttribute("value", this.value);
-                     document.getElementById("edit_routine_#{@routine.id}").appendChild(input);
+                     document.getElementById("new_routine").appendChild(input);
                  });
-              }); 
-            -#Routine::DAYS.each do |day|
-              %label.checkbox.inline
-                =check_box_tag "routine[days][]", day, @routine.days.include?(day) 
-                =day[0,1]
+            }); 
+          :javascript
+            $("#edit_routine_#{@routine.id}").submit(function() {
+              $("#edit_routine_#{@routine.id} .btn.active").each(function() {
+                   var input = document.createElement("input");
+                   input.setAttribute("type", "hidden");
+                   input.setAttribute("name", this.name);
+                   input.setAttribute("value", this.value);
+                   document.getElementById("edit_routine_#{@routine.id}").appendChild(input);
+               });
+            }); 
+          -#Routine::DAYS.each do |day|
+            %label.checkbox.inline
+              =check_box_tag "routine[days][]", day, @routine.days.include?(day) 
+              =day[0,1]
           .row{style: "margin-top:15px"}
             .lead{:style => "margin-bottom:5px"}
               Default Start Time:
-            .offset1
-              #datetimepicker3.input-append
-                %input.span6{"data-format" => "HH:mm PP", :type => "text", :name => "routine[start_time]", :value => "02:00 PM"}
-                %span.add-on
-                  %i{"data-date-icon" => "icon-calendar", "data-time-icon" => "icon-time"}
+            .form-group
+              .input-group.date#datetimepicker3
+                %input.form-control{ :type => "text", :name => "routine[start_time]"} 
+                  %span.input-group-addon
+                    %span.glyphicon.glyphicon-time
               :javascript
-                $('#datetimepicker3').datetimepicker({
-                  language: 'en',
-                  pick12HourFormat: true,
-                  pickDate: false
+                $(function () {
+                  $('#datetimepicker3').datetimepicker({
+                      format: 'LT'
+                  });
                 });
         -#.span4
           .row-fluid

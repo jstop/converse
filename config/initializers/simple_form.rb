@@ -87,7 +87,7 @@ SimpleForm.setup do |config|
   # config.collection_wrapper_tag = nil
 
   # You can define the class to use on all collection wrappers. Defaulting to none.
-  # config.collection_wrapper_class = nil
+  # config.collection_wrapper_class = :btn 
 
   # You can wrap each item in a collection of radio/check boxes with a tag,
   # defaulting to :span.

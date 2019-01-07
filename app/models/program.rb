@@ -23,6 +23,10 @@ class Program < ApplicationRecord
     payload["curriculum"]["sections"]
   end
 
+  def description 
+    payload["curriculum"]["sections"].first["items"].first["description"]
+  end
+
   def num_subscribed 
     if payload.has_key? "subscribers"
       payload["subscribers"].count

@@ -34,6 +34,7 @@ Rails.application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
+  config.log_level = :debug
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
@@ -51,6 +52,6 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.web_console.whitelisted_ips = '172.19.0.1'
+  config.web_console.whitelisted_ips = '172.18.0.1'
 
 end

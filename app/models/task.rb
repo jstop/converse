@@ -1,16 +1,19 @@
 class Task < ApplicationRecord
   belongs_to :user
-  attr_accessor :date_time
+  has_and_belongs_to_many :categories
+  attr_accessor :due_date
+
+  DURATIONS = {"small" => 30,  "medium" => 60, "large" => 120 }
+
   def status_class
-    if self.deadline_passed
+    if self.deadline_passed or self.completed
       "panel-danger"
     else
-      "panel-warning"
+      "panel-primary"
     end
   end
   def deadline_passed
-    f = DateTime.now > self.deadline
-    puts f
-    f
+    return false if self.deadline.nil? 
+    return DateTime.now > self.deadline
   end
 end
