@@ -1,44 +1,58 @@
-.row
-  .col-md-5
-    %h2.text-center Leader Board
-    %table.table
-      %thead
-        %tr
-          %th 
-            %h4 Name
-          %th 
-            %h4 Time
-
-      %tbody
-        - @time_trials.each do |time_trial|
-          %tr
-            %td
-              %h4
-                = time_trial.firstname
-                = time_trial.lastname
-            %td
-              %h4
-                = time_trial.time
-  .col-md-7
-    %h2.text-center{style: "margin: 25px 0 50px 0"} Contestants 
+#leaderboard
+.col-md-6
+  %h1 Leader Board
+  .row
     .col-md-6
-      %h3.pull-right
+      %h4
+        %span
+          ="#{@time_trials.first.firstname} #{@time_trials.first.lastname}"
+
+    .col-md-2
+      %h4
+        ="#{@time_trials[0].time}"
+  .row
+    .col-md-6
+      %h4
+        %span
+          ="#{@time_trials.first.firstname} #{@time_trials.first.lastname}"
+
+    .col-md-2
+      %h4
+        ="#{@time_trials[0].time}"
+  .row
+    .col-md-6
+      %h4
+        %span
+          ="#{@time_trials.first.firstname} #{@time_trials.first.lastname}"
+
+    .col-md-2
+      %h4
+        ="#{@time_trials[0].time}"
+
+.col-md-6
+  .row
+    %button#button-start Start
+    %button#button-reset Reset
+    %button#submit Submit Scores
+  .row
+    .col-md-3
+      %h3
         %span
           -if $contestant1First
             ="#{ $contestant1First[0] }."
             =$contestant1Last
-      %h3.pull-right
+      %h3
         %span
           -if $contestant2First
             ="#{ $contestant2First[0] }."
             =$contestant2Last
-      %h3.pull-right
+      %h3
         %span#contestant3
           -if $contestant3First
             ="#{ $contestant3First[0] }."
             =$contestant3Last
 
-    .col-md-4
+    .col-md-2
       %h3
         %span#minutes1 0
         \:
@@ -57,17 +71,10 @@
         %span#seconds3 00
         \:
         %span#tens3 00
-    .col-md-2
+    .col-md-4
       %button#button-stop1 Stop
       %button#button-stop2 Stop
       %button#button-stop3 Stop
-  .col-md-3
-.row
-  %button#button-start.pull-right Start
-.row
-  %button#button-reset.pull-right Reset
-.row
-  %button#submit.pull-right Submit Scores
 
 %input#contestant1First{type: :hidden, name: :contestant1First, :value => "#{$contestant1First}"}
 %input#contestant1Last{type: :hidden, name: :contestant1Last, :value => "#{$contestant1Last}"}

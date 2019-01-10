@@ -1,0 +1,57 @@
+= form_for @time_trial, html: { class: "form-horizontal", role: "form" }, :url => url_for(:controller => 'time_trials', :action => 'contestants') do |f|
+  -if @time_trial.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@time_trial.errors.count, "error")} prohibited this time_trial from being saved:"
+
+      %ul
+        - @time_trial.errors.full_messages.each do |msg|
+          %li= msg
+
+  .container
+    %h4.col-sm-offset-5.col-sm-9 Contestant 1
+    .form-group
+      = f.label :FirstName, class: 'col-sm-2 control-label'
+      .col-sm-7
+        = f.text_field :contestant1First, class: 'form-control'
+    .form-group
+      = f.label :LastName, class: 'col-sm-2 control-label'
+      .col-sm-7
+        = f.text_field :contestant1Last, class: 'form-control'
+    .form-group
+      = f.label :Email, class: 'col-sm-2 control-label'
+      .col-sm-7
+        = f.text_field :contestant1Email, class: 'form-control'
+    %h4.col-sm-offset-5.col-sm-9 Contestant 2
+    .form-group
+      = f.label :FirstName, class: 'col-sm-2 control-label'
+      .col-sm-7
+        = f.text_field :contestant2First, class: 'form-control'
+    .form-group
+      = f.label :LastName, class: 'col-sm-2 control-label'
+      .col-sm-7
+        = f.text_field :contestant2Last, class: 'form-control'
+    .form-group
+      = f.label :Email, class: 'col-sm-2 control-label'
+      .col-sm-7
+        = f.text_field :contestant2Email, class: 'form-control'
+    %h4.col-sm-offset-5.col-sm-9 Contestant 3
+    .col-sm
+      .form-group
+        = f.label :FirstName, class: 'col-sm-2 control-label'
+        .col-sm-7
+          = f.text_field :contestant3First, class: 'form-control'
+      .form-group
+        = f.label :LastName, class: 'col-sm-2 control-label'
+        .col-sm-7
+          = f.text_field :contestant3Last, class: 'form-control'
+      .form-group
+        = f.label :Email, class: 'col-sm-2 control-label'
+        .col-sm-7
+          = f.text_field :contestant3Email, class: 'form-control'
+
+    .form-group
+      .col-sm-offset-5.col-sm-9
+        = f.submit class: 'btn btn-primary'

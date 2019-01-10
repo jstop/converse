@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby 'ruby 2.5.3'
 gem 'rails', '~> 5.0.0'
 gem 'sqlite3'
 gem 'puma', '~> 3.0'
@@ -31,3 +32,4 @@ gem 'ice_cube'
 gem 'haml-rails'
 gem 'bootstrap_form'
 gem 'bootswatch-rails'
+
