@@ -1,0 +1,31 @@
+= form_for @time_trial, html: { class: "form-horizontal", role: "form" } do |f|
+  -if @time_trial.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@time_trial.errors.count, "error")} prohibited this time_trial from being saved:"
+
+      %ul
+        - @time_trial.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :firstname, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :firstname, class: 'form-control'
+  .form-group
+    = f.label :lastname, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :lastname, class: 'form-control'
+  .form-group
+    = f.label :email, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :email, class: 'form-control'
+  .form-group
+    = f.label :time, class: 'col-sm-2 control-label'
+    .col-sm-10
+      = f.text_field :time, class: 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit class: 'btn btn-primary'

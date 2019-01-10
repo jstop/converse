@@ -25,16 +25,9 @@ end
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'faker'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-fullcalendar'
-  gem 'rails-assets-momentjs'
-end
-
+gem 'bootstrap-generators', '~> 3.3.4'
 gem 'ice_cube'
-gem 'devise'
-gem 'devise-bootstrapped', github: 'king601/devise-bootstrapped'
 gem 'haml-rails'
 gem 'bootstrap_form'
 gem 'bootswatch-rails'

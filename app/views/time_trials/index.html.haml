@@ -1,0 +1,28 @@
+.page-header
+  = link_to new_time_trial_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Time trial
+  %h1 Listing time_trials
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Firstname
+        %th Lastname
+        %th Email
+        %th Time
+        %th
+        %th
+        %th
+
+    %tbody
+      - @time_trials.each do |time_trial|
+        %tr
+          %td= time_trial.firstname
+          %td= time_trial.lastname
+          %td= time_trial.email
+          %td= time_trial.time
+          %td= link_to 'Show', time_trial
+          %td= link_to 'Edit', edit_time_trial_path(time_trial)
+          %td= link_to 'Destroy', time_trial, data: { confirm: 'Are you sure?' }, method: :delete

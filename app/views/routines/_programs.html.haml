@@ -1,8 +1,0 @@
-.panel.panel-warning
-  .panel-heading 
-    Tasks
-    = link_to '', new_task_path, class: "glyphicon glyphicon-plus pull-right"
-  .panel-body
-    - @tasks.first(3).each do |task|
-      -@task = task
-      =render 'routines/task'

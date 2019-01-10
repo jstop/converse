@@ -1,12 +1,5 @@
-GIT
-  remote: git://github.com/king601/devise-bootstrapped.git
-  revision: baa908988c08302e13c4536a4efee0052172ac94
-  specs:
-    devise-bootstrapped (0.1.1)
-
 GEM
   remote: https://rubygems.org/
-  remote: https://rails-assets.org/
   specs:
     actioncable (5.0.7)
       actionpack (= 5.0.7)
@@ -48,17 +41,16 @@ GEM
     arel (7.1.4)
     autoprefixer-rails (9.1.4)
       execjs
-    bcrypt (3.1.12)
     better_errors (2.5.0)
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
     bindex (0.5.0)
+    bootstrap-generators (3.3.4)
+      railties (>= 3.1.0)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
-    bootstrap3-datetimepicker-rails (4.17.47)
-      momentjs-rails (>= 2.8.1)
     bootstrap_form (4.0.0)
       rails (>= 5.0)
     bootswatch-rails (3.3.5)
@@ -75,12 +67,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
-    devise (4.5.0)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 4.1.0, < 6.0)
-      responders
-      warden (~> 1.2.3)
     erubi (1.7.1)
     erubis (2.7.0)
     execjs (2.7.0)
@@ -125,13 +111,10 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
-    momentjs-rails (2.20.1)
-      railties (>= 3.1)
     multi_json (1.13.1)
     nio4r (2.3.1)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
-    orm_adapter (0.5.0)
     pg (1.1.3)
     puma (3.12.0)
     rack (2.0.5)
@@ -149,12 +132,6 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.0.7)
       sprockets-rails (>= 2.0.0)
-    rails-assets-fullcalendar (3.9.0)
-      rails-assets-jquery (>= 2, < 4)
-      rails-assets-moment (>= 2.20.1, < 3)
-    rails-assets-jquery (3.3.1)
-    rails-assets-moment (2.22.2)
-    rails-assets-momentjs (2.22.2)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -171,9 +148,6 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    responders (2.4.0)
-      actionpack (>= 4.2.0, < 5.3)
-      railties (>= 4.2.0, < 5.3)
     ruby_parser (3.12.0)
       sexp_processor (~> 4.9)
     sass (3.6.0)
@@ -215,8 +189,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
-    warden (1.2.7)
-      rack (>= 1.0)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -231,14 +203,12 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  bootstrap-generators (~> 3.3.4)
   bootstrap-sass
-  bootstrap3-datetimepicker-rails (~> 4.17.47)
   bootstrap_form
   bootswatch-rails
   byebug
   coffee-rails (~> 4.1.0)
-  devise
-  devise-bootstrapped!
   faker
   haml-rails
   ice_cube
@@ -248,8 +218,6 @@ DEPENDENCIES
   pg
   puma (~> 3.0)
   rails (~> 5.0.0)
-  rails-assets-fullcalendar!
-  rails-assets-momentjs!
   rails_layout
   sass-rails (~> 5.0)
   simple_form
@@ -261,4 +229,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

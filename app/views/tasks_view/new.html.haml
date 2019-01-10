@@ -1,9 +1,0 @@
-.modal.fade#newtask
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{ :type => "button", "data-dismiss" => "modal", "aria-hidden" => "true"}
-          &times;
-        %h4 Create New Task
-      .modal-body
-        = render 'form', tasks: @task

@@ -1,0 +1,2 @@
+class TimeTrial < ApplicationRecord
+end

@@ -1,0 +1,18 @@
+.page-header
+  = link_to time_trials_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_time_trial_path(@time_trial), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show time_trial
+
+%dl.dl-horizontal
+  %dt Firstname:
+  %dd= @time_trial.firstname
+  %dt Lastname:
+  %dd= @time_trial.lastname
+  %dt Email:
+  %dd= @time_trial.email
+  %dt Time:
+  %dd= @time_trial.time
