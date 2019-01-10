@@ -9,6 +9,15 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
+gem 'bootstrap-generators', '~> 3.3.4'
+gem 'ice_cube'
+gem 'haml-rails'
+gem 'bootstrap_form'
+gem 'bootswatch-rails'
+gem 'bootstrap-sass'
+gem 'simple_form'
+gem 'faker'
+
 group :development, :test do
   gem 'byebug', platform: :mri
 end
@@ -23,13 +32,5 @@ group :development do
   gem 'rails_layout'
 end
 
-gem 'bootstrap-sass'
-gem 'simple_form'
-gem 'faker'
-
-gem 'bootstrap-generators', '~> 3.3.4'
-gem 'ice_cube'
-gem 'haml-rails'
-gem 'bootstrap_form'
-gem 'bootswatch-rails'
+gem 'rails_12factor', group: :production
 
