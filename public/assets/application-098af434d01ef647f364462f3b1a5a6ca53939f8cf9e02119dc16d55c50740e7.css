@@ -26,19 +26,19 @@
  */
 @font-face {
   font-family: "Druk-Wide-Bold";
-  src: url(/assets/Druk-Wide-Bold.otf) format("truetype");
+  src: url(/assets/Druk-Wide-Bold-0ea32bed773ba04efcc3b96c8eb37d073a140deb2c47547db7cb14f5ef905ac3.otf) format("truetype");
 }
 @font-face {
   font-family: "Druk-Wide-Heavy";
-  src: url(/assets/Druk-Wide-Heavy.otf) format("truetype");
+  src: url(/assets/Druk-Wide-Heavy-97761374891e9ab246d67abee4d61e3646d9ea43ff7310176e9b4829c8a56f14.otf) format("truetype");
 }
 @font-face {
   font-family: "Druk-Wide-Medium";
-  src: url(/assets/Druk-Wide-Medium.otf) format("truetype");
+  src: url(/assets/Druk-Wide-Medium-88e231df309e888ef0c909a0bc6d96b196a01f36aba58a5049b5b06dd9eab523.otf) format("truetype");
 }
 @font-face {
   font-family: "Druk-Wide-Super";
-  src: url(/assets/Druk-Wide-Super.otf) format("truetype");
+  src: url(/assets/Druk-Wide-Super-6863a68341a3279d49ba112b2b96b3e67be7e428b10b9c6611781f9b1639eaf7.otf) format("truetype");
 }
 /*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
@@ -9613,60 +9613,56 @@ section:after,
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-@font-face {
-  font-family: "Druk-Wide-Bold ";
-  src: url(/assets/Druk-Wide-Bold.otf) format("truetype");
-}
-/* line 14, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 8, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 img {
   margin: 0 auto;
 }
 
-/* line 19, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 13, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .navbar-brand {
   font-size: inherit;
 }
 
-/* line 44, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 38, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 main {
   padding-bottom: 80px;
   width: 100%;
   margin-top: 60px;
 }
 
-/* line 51, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 45, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 section {
   margin-top: 20px;
 }
 
-/* line 59, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 53, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .authform {
   padding-top: 30px;
   max-width: 320px;
   margin: 0 auto;
 }
 
-/* line 64, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 58, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .authform form {
   padding-bottom: 40px;
 }
 
-/* line 69, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 63, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .authform .right {
   float: right !important;
 }
 
-/* line 83, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 77, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 #error_explanation h2 {
   font-size: 16px;
 }
 
-/* line 91, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 85, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 #calendar .fc-day.highlight-red {
   background-color: red;
 }
 
-/* line 96, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 90, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 h4 a {
   color: #8a6d3b;
 }
@@ -18229,28 +18225,29 @@ button.close {
 }
 /* line 5, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 body {
+  width: 1900;
   padding-top: 60px;
 }
 
-/* line 8, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 9, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 .borderless td, .borderless th {
   border: none;
 }
 
-/* line 11, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 12, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 .page-header {
   border-bottom: none;
 }
-/* line 13, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 14, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 .page-header a.btn {
   float: right;
 }
-/* line 17, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 18, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 .page-header a.btn + a.btn {
   margin-right: 8px;
 }
 
-/* line 22, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 23, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 input[type="radio"], input[type="checkbox"] {
   width: initial;
   height: initial;
@@ -18374,11 +18371,13 @@ h3 {
 }
 
 /* line 44, /myapp/app/assets/stylesheets/time_trials.scss */
-.container {
-  margin: 10px;
+.contest-container {
+  margin: 50px;
+  width: 1600px;
+  height: 900px;
 }
 
-/* line 47, /myapp/app/assets/stylesheets/time_trials.scss */
+/* line 49, /myapp/app/assets/stylesheets/time_trials.scss */
 .table > tbody > tr > td {
   border-top: 0px;
 }
