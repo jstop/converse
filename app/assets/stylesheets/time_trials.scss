@@ -23,7 +23,7 @@ border-radius: $radius;
 }
 
 body {
-background:$base-color;
+background: url(1107_Leaderboard_FinalBG_v01.png);
 font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 height:100%;
 }
@@ -36,6 +36,7 @@ text-align:center;
 }
 
 h1, h2, h3 {
+  color: $orange;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   font-size: 2.6em;
