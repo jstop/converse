@@ -24,13 +24,12 @@
   .col-md-6
     %h2.text-center Contestants
     %table.table{style: "border-top: none"}
-      %thead
+      %tbody
         %tr
           %th 
             %h4 Players 
           %th 
             %h4 Score
-      %tbody
         %tr
           %td
             %h3
@@ -54,7 +53,7 @@
                 -if $contestant2First
                   ="#{ $contestant2First[0] }."
                   =$contestant2Last
-          %td
+          %td{style: "width: 285px"}
             %h3.clock
               %span#minutes2 0
               \:
