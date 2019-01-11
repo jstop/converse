@@ -35,9 +35,10 @@
               %li
                 = link_to 'New Contestants', new_time_trial_path
     -if controller_name == "time_trials" and action_name == "index"
-      .container
+      .container{style => "margin: 50px; width: 1600px; height: 900px;"}
+
     -else
-      .container.contest-container
+      .container
         - flash.each do |name, msg|
           = content_tag :div, class: "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do
             %button.close{type: "button", data: {dismiss: "alert"} }

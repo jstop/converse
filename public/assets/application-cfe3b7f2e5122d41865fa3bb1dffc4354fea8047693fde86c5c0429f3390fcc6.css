@@ -26,19 +26,19 @@
  */
 @font-face {
   font-family: "Druk-Wide-Bold";
-  src: url(/assets/Druk-Wide-Bold.otf) format("truetype");
+  src: url(/assets/Druk-Wide-Bold-0ea32bed773ba04efcc3b96c8eb37d073a140deb2c47547db7cb14f5ef905ac3.otf) format("truetype");
 }
 @font-face {
   font-family: "Druk-Wide-Heavy";
-  src: url(/assets/Druk-Wide-Heavy.otf) format("truetype");
+  src: url(/assets/Druk-Wide-Heavy-97761374891e9ab246d67abee4d61e3646d9ea43ff7310176e9b4829c8a56f14.otf) format("truetype");
 }
 @font-face {
   font-family: "Druk-Wide-Medium";
-  src: url(/assets/Druk-Wide-Medium.otf) format("truetype");
+  src: url(/assets/Druk-Wide-Medium-88e231df309e888ef0c909a0bc6d96b196a01f36aba58a5049b5b06dd9eab523.otf) format("truetype");
 }
 @font-face {
   font-family: "Druk-Wide-Super";
-  src: url(/assets/Druk-Wide-Super.otf) format("truetype");
+  src: url(/assets/Druk-Wide-Super-6863a68341a3279d49ba112b2b96b3e67be7e428b10b9c6611781f9b1639eaf7.otf) format("truetype");
 }
 /*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
@@ -18371,13 +18371,6 @@ h3 {
 }
 
 /* line 44, /myapp/app/assets/stylesheets/time_trials.scss */
-.container {
-  margin: 50px;
-  width: 1600;
-  height: 900;
-}
-
-/* line 49, /myapp/app/assets/stylesheets/time_trials.scss */
 .table > tbody > tr > td {
   border-top: 0px;
 }
