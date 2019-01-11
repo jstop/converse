@@ -8,6 +8,7 @@
             %h4 Name
           %th 
             %h4 Time
+          %th 
 
       %tbody
         - @time_trials.each do |time_trial|
@@ -19,55 +20,77 @@
             %td
               %h4
                 = time_trial.time
-  .col-md-7
-    %h2.text-center{style: "margin: 25px 0 50px 0"} Contestants 
-    .col-md-6
-      %h3.pull-right
-        %span
-          -if $contestant1First
-            ="#{ $contestant1First[0] }."
-            =$contestant1Last
-      %h3.pull-right
-        %span
-          -if $contestant2First
-            ="#{ $contestant2First[0] }."
-            =$contestant2Last
-      %h3.pull-right
-        %span#contestant3
-          -if $contestant3First
-            ="#{ $contestant3First[0] }."
-            =$contestant3Last
-
-    .col-md-4
-      %h3
-        %span#minutes1 0
-        \:
-        %span#seconds1 00
-        \:
-        %span#tens1 00
-      %h3
-        %span#minutes2 0
-        \:
-        %span#seconds2 00
-        \:
-        %span#tens2 00
-      %h3
-        %span#minutes3 0
-        \:
-        %span#seconds3 00
-        \:
-        %span#tens3 00
-    .col-md-2
-      %button#button-stop1 Stop
-      %button#button-stop2 Stop
-      %button#button-stop3 Stop
+  .col-md-1
+  .col-md-6
+    %h2.text-center Contestants
+    %table.table{style: "border-top: none"}
+      %thead
+        %tr
+          %th 
+            %h4 Players 
+          %th 
+            %h4 Score
+      %tbody
+        %tr
+          %td
+            %h3
+              %span
+                -if $contestant1First
+                  ="#{ $contestant1First[0] }."
+                  =$contestant1Last
+          %td
+            %h3.clock
+              %span#minutes1 0
+              \:
+              %span#seconds1 00
+              \:
+              %span#tens1 00
+          %td
+            %button#button-stop1.btn.btn-default.btn-lg Finish
+        %tr
+          %td
+            %h3
+              %span
+                -if $contestant2First
+                  ="#{ $contestant2First[0] }."
+                  =$contestant2Last
+          %td
+            %h3.clock
+              %span#minutes2 0
+              \:
+              %span#seconds2 00
+              \:
+              %span#tens2 00
+          %td
+            %button#button-stop2.btn.btn-default.btn-lg Finish
+        %tr
+          %td
+            %h3
+              %span
+                -if $contestant3First
+                  ="#{ $contestant3First[0] }."
+                  =$contestant3Last
+          %td
+            %h3.clock
+              %span#minutes3 0
+              \:
+              %span#seconds3 00
+              \:
+              %span#tens3 00
+          %td
+            %button#button-stop3.btn.btn-default.btn-lg Finish
+.row{style: "margin-top: 150px"}
+  .col-md-9
   .col-md-3
-.row
-  %button#button-start.pull-right Start
-.row
-  %button#button-reset.pull-right Reset
-.row
-  %button#button-submit.pull-right Submit Scores
+    %table.table
+      %tbody
+        %tr
+          %td
+            %button#button-start.pull-right.btn.btn-default.btn-lg Start
+          %td
+            %button#button-reset.pull-right.btn.btn-default.btn-lg Reset
+          %td
+            %button#button-submit.pull-right.btn.btn-default.btn-lg Submit Scores
 
 %input#contestant1First{type: :hidden, name: :contestant1First, :value => "#{$contestant1First}"}
 %input#contestant1Last{type: :hidden, name: :contestant1Last, :value => "#{$contestant1Last}"}

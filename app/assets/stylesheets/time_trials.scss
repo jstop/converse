@@ -6,7 +6,7 @@
 $orange: #ffa600;
 $grey:#f3f3f3;
 $white: #fff;
-$base-color:$orange ;
+$base-color:$grey ;
 
 
 /* Mixin's */
@@ -22,24 +22,15 @@ border-radius: $radius;
 -khtml-border-radius: $radius;
 }
 
-body {
-background: asset_url('1107_Leaderboard_FinalBG_v01.png');
-font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-height:100%;
-}
-
-.wrapper {
-width: 800px;
-margin: 30px auto;
-color:$white;
-text-align:center;
-}
-
-h1, h2, h3 {
-  color: $orange;
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+h1, h2 {
+  color: $white;
+  font-family: 'Druk-Wide-Bold';
   font-size: 2.6em;
+  text-transform: uppercase;
+}
+ h3 {
+  color: $white;
+  font-family: 'Druk-Wide-Bold';
   text-transform: uppercase;
 }
 
@@ -52,22 +43,7 @@ h1, h2, h3 {
 .container{
   margin: 10px;
 }
-button{
-@include corners (5px);
-background:$base-color;
-color:$white;
-border: solid 1px $white;
-text-decoration:none;
-cursor:pointer;
-font-size:1.2em;
-padding:18px 10px;
-width:180px;
-margin: 10px;
- outline: none;
-  &:hover{
-	@include transition;
-	background:$white;
-	border: solid 1px $white;
-	color:$base-color;
-	}
+.table > tbody > tr > td {
+  border-top: 0px; 
 }
+
