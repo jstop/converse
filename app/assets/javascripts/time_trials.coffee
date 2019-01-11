@@ -76,7 +76,6 @@ window.onload = ->
           'email': contestant2Email
           'time': appendMinutes2.innerHTML + ":" + appendSeconds2.innerHTML + ":" + appendTens2.innerHTML
       success: (data) ->
-        return
     $.ajax
       url: '/time_trials.json'
       type: 'POST'
@@ -87,8 +86,8 @@ window.onload = ->
           'email': contestant3Email
           'time': appendMinutes3.innerHTML + ":" + appendSeconds3.innerHTML + ":" + appendTens3.innerHTML
       success: (data) ->
+        location.reload();
         return
-    location.reload();
     return
        
   startTimer1 = ->
