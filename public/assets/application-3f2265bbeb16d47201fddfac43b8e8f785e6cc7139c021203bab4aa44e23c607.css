@@ -28,6 +28,18 @@
   font-family: "Druk-Wide-Bold";
   src: url(/assets/Druk-Wide-Bold.otf) format("truetype");
 }
+@font-face {
+  font-family: "Druk-Wide-Heavy";
+  src: url(/assets/Druk-Wide-Heavy.otf) format("truetype");
+}
+@font-face {
+  font-family: "Druk-Wide-Medium";
+  src: url(/assets/Druk-Wide-Medium.otf) format("truetype");
+}
+@font-face {
+  font-family: "Druk-Wide-Super";
+  src: url(/assets/Druk-Wide-Super.otf) format("truetype");
+}
 /*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -9601,60 +9613,56 @@ section:after,
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-@font-face {
-  font-family: "Druk-Wide-Bold ";
-  src: url(/assets/Druk-Wide-Bold.otf) format("truetype");
-}
-/* line 14, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 8, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 img {
   margin: 0 auto;
 }
 
-/* line 19, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 13, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .navbar-brand {
   font-size: inherit;
 }
 
-/* line 44, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 38, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 main {
   padding-bottom: 80px;
   width: 100%;
   margin-top: 60px;
 }
 
-/* line 51, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 45, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 section {
   margin-top: 20px;
 }
 
-/* line 59, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 53, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .authform {
   padding-top: 30px;
   max-width: 320px;
   margin: 0 auto;
 }
 
-/* line 64, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 58, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .authform form {
   padding-bottom: 40px;
 }
 
-/* line 69, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 63, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .authform .right {
   float: right !important;
 }
 
-/* line 83, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 77, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 #error_explanation h2 {
   font-size: 16px;
 }
 
-/* line 91, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 85, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 #calendar .fc-day.highlight-red {
   background-color: red;
 }
 
-/* line 96, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 90, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 h4 a {
   color: #8a6d3b;
 }
@@ -18217,28 +18225,29 @@ button.close {
 }
 /* line 5, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 body {
+  width: 1900;
   padding-top: 60px;
 }
 
-/* line 8, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 9, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 .borderless td, .borderless th {
   border: none;
 }
 
-/* line 11, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 12, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 .page-header {
   border-bottom: none;
 }
-/* line 13, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 14, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 .page-header a.btn {
   float: right;
 }
-/* line 17, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 18, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 .page-header a.btn + a.btn {
   margin-right: 8px;
 }
 
-/* line 22, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
+/* line 23, /myapp/app/assets/stylesheets/bootstrap-generators.scss */
 input[type="radio"], input[type="checkbox"] {
   width: initial;
   height: initial;
@@ -18246,15 +18255,16 @@ input[type="radio"], input[type="checkbox"] {
 }
 /* line 1, /myapp/app/assets/stylesheets/scaffolds.scss */
 body {
+  background: url(/assets/1107_Leaderboard_FinalBG_v01-278ad1f02133659eac165a7086a7babc8bd03c38b66a82b0ec479a94a4415a74.png);
   background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  color: #fff;
+  font-family: "Druk-Wide-Medium";
   font-size: 13px;
   line-height: 18px;
   margin: 33px;
 }
 
-/* line 10, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 11, /myapp/app/assets/stylesheets/scaffolds.scss */
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -18262,48 +18272,48 @@ p, ol, ul, td {
   margin: 33px;
 }
 
-/* line 17, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 18, /myapp/app/assets/stylesheets/scaffolds.scss */
 a:hover {
   text-decoration: none;
 }
 
-/* line 21, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 22, /myapp/app/assets/stylesheets/scaffolds.scss */
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
 
-/* line 28, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 29, /myapp/app/assets/stylesheets/scaffolds.scss */
 th {
   padding-bottom: 5px;
 }
 
-/* line 32, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 33, /myapp/app/assets/stylesheets/scaffolds.scss */
 td {
   padding-bottom: 7px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* line 39, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 40, /myapp/app/assets/stylesheets/scaffolds.scss */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 44, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 45, /myapp/app/assets/stylesheets/scaffolds.scss */
 #notice {
   color: green;
 }
 
-/* line 48, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 49, /myapp/app/assets/stylesheets/scaffolds.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 54, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 55, /myapp/app/assets/stylesheets/scaffolds.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -18312,7 +18322,7 @@ div.field, div.actions {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 62, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 63, /myapp/app/assets/stylesheets/scaffolds.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -18323,80 +18333,51 @@ div.field, div.actions {
   background-color: #c00;
   color: #fff;
 }
-/* line 73, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 74, /myapp/app/assets/stylesheets/scaffolds.scss */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
 }
 
-/* line 79, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 80, /myapp/app/assets/stylesheets/scaffolds.scss */
 label {
   display: block;
 }
 /* Variabes */
 /* Mixin's */
 /* line 26, /myapp/app/assets/stylesheets/time_trials.scss */
-body {
-  background: url(/assets/1107_Leaderboard_FinalBG_v01-278ad1f02133659eac165a7086a7babc8bd03c38b66a82b0ec479a94a4415a74.png);
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  height: 100%;
-}
-
-/* line 32, /myapp/app/assets/stylesheets/time_trials.scss */
-.wrapper {
-  width: 800px;
-  margin: 30px auto;
+h1, h2 {
   color: #fff;
-  text-align: center;
-}
-
-/* line 39, /myapp/app/assets/stylesheets/time_trials.scss */
-h1, h2, h3 {
-  color: #fff;
-  font-family: 'Druk';
-  font-weight: bold;
+  font-family: 'Druk-Wide-Bold';
   font-size: 2.6em;
   text-transform: uppercase;
 }
 
-/* line 47, /myapp/app/assets/stylesheets/time_trials.scss */
+/* line 32, /myapp/app/assets/stylesheets/time_trials.scss */
+h3 {
+  color: #fff;
+  font-family: 'Druk-Wide-Bold';
+  text-transform: uppercase;
+}
+
+/* line 38, /myapp/app/assets/stylesheets/time_trials.scss */
 #seconds, #tens {
   font-size: 2em;
 }
 
-/* line 50, /myapp/app/assets/stylesheets/time_trials.scss */
+/* line 41, /myapp/app/assets/stylesheets/time_trials.scss */
 #leaderboard {
   color: #fff;
 }
 
-/* line 53, /myapp/app/assets/stylesheets/time_trials.scss */
+/* line 44, /myapp/app/assets/stylesheets/time_trials.scss */
 .container {
-  margin: 10px;
+  margin: 50px;
+  width: 1600px;
+  height: 900px;
 }
 
-/* line 56, /myapp/app/assets/stylesheets/time_trials.scss */
-button {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -khtml-border-radius: 5px;
-  background: #fff;
-  color: #f3f3f3;
-  border: solid 1px #fff;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 1.2em;
-  padding: 18px 10px;
-  width: 180px;
-  margin: 10px;
-  outline: none;
-}
-/* line 68, /myapp/app/assets/stylesheets/time_trials.scss */
-button:hover {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  background: #fff;
-  border: solid 1px #fff;
-  color: #f3f3f3;
+/* line 49, /myapp/app/assets/stylesheets/time_trials.scss */
+.table > tbody > tr > td {
+  border-top: 0px;
 }
