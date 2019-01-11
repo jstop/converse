@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-window.onload = ->
+$(document).on 'turbolinks:load', ->
   # Get Contestant Info
   contestant1First = $("#contestant1First").attr("value");
   contestant1Last = $("#contestant1Last").attr("value");
@@ -30,7 +30,6 @@ window.onload = ->
   tens2 = 0
   tens3 = 0
 
-  submitScores = document.getElementById('submit')
 
   appendTens1 = document.getElementById('tens1')
   appendTens2 = document.getElementById('tens2')
@@ -49,6 +48,7 @@ window.onload = ->
   buttonStop3 = document.getElementById('button-stop3')
   buttonReset = document.getElementById('button-reset')
   buttonStart = document.getElementById('button-start')
+  submitScores = document.getElementById('button-submit')
 
   Interval1 = undefined
   Interval2 = undefined
