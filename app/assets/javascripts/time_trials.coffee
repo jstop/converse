@@ -54,7 +54,7 @@ window.onload = ->
   Interval2 = undefined
   Interval3 = undefined
 
-  submit.onclick = ->
+  submitScores.onclick = ->
     $.ajax
       url: '/time_trials.json'
       type: 'POST'
