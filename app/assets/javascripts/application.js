@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
-//= require time_trials
 //= require_tree .
 
 
