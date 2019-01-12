@@ -28,41 +28,43 @@
       = f.label "Enable Bonus", class: 'col-sm-2 control-label'
       .col-sm-7
         = f.check_box  :contestant1Cheater, as: :boolean, class: 'form-control'
-    %h4.col-sm-offset-5.col-sm-9{style: "margin-top: 40px"} Contestant 2
-    .form-group
-      = f.label :FirstName, class: 'col-sm-2 control-label'
-      .col-sm-7
-        = f.text_field :contestant2First, class: 'form-control'
-    .form-group
-      = f.label :LastName, class: 'col-sm-2 control-label'
-      .col-sm-7
-        = f.text_field :contestant2Last, class: 'form-control'
-    .form-group
-      = f.label :Email, class: 'col-sm-2 control-label'
-      .col-sm-7
-        = f.text_field :contestant2Email, class: 'form-control'
-    .form-group
-      = f.label "Enable Bonus", class: 'col-sm-2 control-label'
-      .col-sm-7
-        = f.check_box :contestant2Cheater, as: :boolean, class: 'form-control'
-    %h4.col-sm-offset-5.col-sm-9{style: "margin-top: 40px"} Contestant 3
-    .col-sm
+
+    -#
+      %h4.col-sm-offset-5.col-sm-9{style: "margin-top: 40px"} Contestant 2
       .form-group
         = f.label :FirstName, class: 'col-sm-2 control-label'
         .col-sm-7
-          = f.text_field :contestant3First, class: 'form-control'
+          = f.text_field :contestant2First, class: 'form-control'
       .form-group
         = f.label :LastName, class: 'col-sm-2 control-label'
         .col-sm-7
-          = f.text_field :contestant3Last, class: 'form-control'
+          = f.text_field :contestant2Last, class: 'form-control'
       .form-group
         = f.label :Email, class: 'col-sm-2 control-label'
         .col-sm-7
-          = f.text_field :contestant3Email, class: 'form-control'
+          = f.text_field :contestant2Email, class: 'form-control'
       .form-group
         = f.label "Enable Bonus", class: 'col-sm-2 control-label'
         .col-sm-7
-          = f.check_box  :contestant3Cheater, as: :boolean, class: 'form-control'
+          = f.check_box :contestant2Cheater, as: :boolean, class: 'form-control'
+      %h4.col-sm-offset-5.col-sm-9{style: "margin-top: 40px"} Contestant 3
+      .col-sm
+        .form-group
+          = f.label :FirstName, class: 'col-sm-2 control-label'
+          .col-sm-7
+            = f.text_field :contestant3First, class: 'form-control'
+        .form-group
+          = f.label :LastName, class: 'col-sm-2 control-label'
+          .col-sm-7
+            = f.text_field :contestant3Last, class: 'form-control'
+        .form-group
+          = f.label :Email, class: 'col-sm-2 control-label'
+          .col-sm-7
+            = f.text_field :contestant3Email, class: 'form-control'
+        .form-group
+          = f.label "Enable Bonus", class: 'col-sm-2 control-label'
+          .col-sm-7
+            = f.check_box  :contestant3Cheater, as: :boolean, class: 'form-control'
 
     .form-group
       .col-sm-offset-5.col-sm-9

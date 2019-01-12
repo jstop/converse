@@ -45,7 +45,7 @@
                     =$contestant1Last
 
             %td
-              %h3.clock
+              %h3.clock{style: "width: 215px"}
                 %span#minutes1 0
                 \:
                 %span#seconds1 00
@@ -53,7 +53,7 @@
                 %span#tens1 00
             %td
               %button#button-stop1.btn.btn-default.btn-lg Finish
-          %tr
+          -#%tr
             %td{style: "padding-top: 0px"}
               %h3
               -if $contestant2Cheater == "1"
@@ -74,7 +74,7 @@
                 %span#tens2 00
             %td
               %button#button-stop2.btn.btn-default.btn-lg Finish
-          %tr
+          -#%tr
             %td{style: "padding-top: 20px"}
               -if $contestant3Cheater == "1"
                 %span
@@ -112,12 +112,12 @@
   %input#contestant1Email{type: :hidden, name: :contestant1Email, :value => "#{$contestant1Email}"}
   %input#contestant1Cheater{type: :hidden, name: :contestant1Cheater, :value => "#{$contestant1Cheater}"}
 
-  %input#contestant2First{type: :hidden, name: :contestant2First, :value => "#{$contestant2First}"}
-  %input#contestant2Last{type: :hidden, name: :contestant2Last, :value => "#{$contestant2Last}"}
-  %input#contestant2Email{type: :hidden, name: :contestant2Email, :value => "#{$contestant2Email}"}
-  %input#contestant2Cheater{type: :hidden, name: :contestant2Cheater, :value => "#{$contestant2Cheater}"}
-
-  %input#contestant3First{type: :hidden, name: :contestant3First, :value => "#{$contestant3First}"}
-  %input#contestant3Last{type: :hidden, name: :contestant3Last, :value => "#{$contestant3Last}"}
-  %input#contestant3Email{type: :hidden, name: :contestant3Email, :value => "#{$contestant3Email}"}
-  %input#contestant3Cheater{type: :hidden, name: :contestant3Cheater, :value => "#{$contestant3Cheater}"}
+-#  %input#contestant2First{type: :hidden, name: :contestant2First, :value => "#{$contestant2First}"}
+-#  %input#contestant2Last{type: :hidden, name: :contestant2Last, :value => "#{$contestant2Last}"}
+-#  %input#contestant2Email{type: :hidden, name: :contestant2Email, :value => "#{$contestant2Email}"}
+-#  %input#contestant2Cheater{type: :hidden, name: :contestant2Cheater, :value => "#{$contestant2Cheater}"}
+-#
+-#  %input#contestant3First{type: :hidden, name: :contestant3First, :value => "#{$contestant3First}"}
+-#  %input#contestant3Last{type: :hidden, name: :contestant3Last, :value => "#{$contestant3Last}"}
+-#  %input#contestant3Email{type: :hidden, name: :contestant3Email, :value => "#{$contestant3Email}"}
+-#  %input#contestant3Cheater{type: :hidden, name: :contestant3Cheater, :value => "#{$contestant3Cheater}"}

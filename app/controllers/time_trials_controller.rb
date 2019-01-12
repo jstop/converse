@@ -14,23 +14,23 @@ class TimeTrialsController < ApplicationController
     $contestant1Email = params["time_trial"]["contestant1Email"]
     $contestant1Cheater  = params["time_trial"]["contestant1Cheater"]
 
-    $contestant2First = params["time_trial"]["contestant2First"]
-    $contestant2Last = params["time_trial"]["contestant2Last"]
-    $contestant2Email = params["time_trial"]["contestant2Email"]
-    $contestant2Cheater  = params["time_trial"]["contestant2Cheater"]
-    
-    $contestant3First = params["time_trial"]["contestant3First"]
-    $contestant3Last = params["time_trial"]["contestant3Last"]
-    $contestant3Email = params["time_trial"]["contestant3Email"]
-    $contestant3Cheater  = params["time_trial"]["contestant3Cheater"]
+#    $contestant2First = params["time_trial"]["contestant2First"]
+#    $contestant2Last = params["time_trial"]["contestant2Last"]
+#    $contestant2Email = params["time_trial"]["contestant2Email"]
+#    $contestant2Cheater  = params["time_trial"]["contestant2Cheater"]
+#    
+#    $contestant3First = params["time_trial"]["contestant3First"]
+#    $contestant3Last = params["time_trial"]["contestant3Last"]
+#    $contestant3Email = params["time_trial"]["contestant3Email"]
+#    $contestant3Cheater  = params["time_trial"]["contestant3Cheater"]
 
     puts params["time_trial"]["contestant1Cheater"]
-    puts params["time_trial"]["contestant2Cheater"]
-    puts params["time_trial"]["contestant3Cheater"]
+#    puts params["time_trial"]["contestant2Cheater"]
+#    puts params["time_trial"]["contestant3Cheater"]
 
     puts $contestant1Cheater
-    puts $contestant2Cheater
-    puts $contestant3Cheater
+#    puts $contestant2Cheater
+#    puts $contestant3Cheater
 
     respond_to do |format|
       format.html { redirect_back fallback_location: { action: "index" }, notice: 'Time trial was successfully created.' }
