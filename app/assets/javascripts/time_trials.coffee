@@ -4,6 +4,7 @@
 
 $(document).on 'turbolinks:load', ->
   # Get Contestant Info
+  sound = document.getElementById("audio");
   contestant1First = $("#contestant1First").attr("value");
   contestant1Last = $("#contestant1Last").attr("value");
   contestant1Email = $("#contestant1Email").attr("value");
@@ -165,15 +166,19 @@ $(document).on 'turbolinks:load', ->
     console.log 'Intervals Set'
     return
 
+
   buttonStop1.onclick = ->
+    sound.play()
     clearInterval Interval1
     return
 
   buttonStop2.onclick = ->
+    sound.play()
     clearInterval Interval2
     return
 
   buttonStop3.onclick = ->
+    sound.play()
     clearInterval Interval3
     return
 

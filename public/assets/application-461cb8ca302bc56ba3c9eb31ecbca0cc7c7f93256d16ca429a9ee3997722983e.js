@@ -16865,7 +16865,8 @@ Copyright © 2018 Basecamp, LLC
 }).call(this);
 (function() {
   $(document).on('turbolinks:load', function() {
-    var Interval1, Interval2, Interval3, appendMinutes1, appendMinutes2, appendMinutes3, appendSeconds1, appendSeconds2, appendSeconds3, appendTens1, appendTens2, appendTens3, buttonReset, buttonStart, buttonStop1, buttonStop2, buttonStop3, contestant1Email, contestant1First, contestant1Last, contestant2Email, contestant2First, contestant2Last, contestant3Email, contestant3First, contestant3Last, minutes1, minutes2, minutes3, score1, seconds1, seconds2, seconds3, startTimer1, startTimer2, startTimer3, submitScores, tens1, tens2, tens3;
+    var Interval1, Interval2, Interval3, appendMinutes1, appendMinutes2, appendMinutes3, appendSeconds1, appendSeconds2, appendSeconds3, appendTens1, appendTens2, appendTens3, buttonReset, buttonStart, buttonStop1, buttonStop2, buttonStop3, contestant1Email, contestant1First, contestant1Last, contestant2Email, contestant2First, contestant2Last, contestant3Email, contestant3First, contestant3Last, minutes1, minutes2, minutes3, score1, seconds1, seconds2, seconds3, sound, startTimer1, startTimer2, startTimer3, submitScores, tens1, tens2, tens3;
+    sound = document.getElementById("audio");
     contestant1First = $("#contestant1First").attr("value");
     contestant1Last = $("#contestant1Last").attr("value");
     contestant1Email = $("#contestant1Email").attr("value");
@@ -17033,12 +17034,15 @@ Copyright © 2018 Basecamp, LLC
       console.log('Intervals Set');
     };
     buttonStop1.onclick = function() {
+      sound.play();
       clearInterval(Interval1);
     };
     buttonStop2.onclick = function() {
+      sound.play();
       clearInterval(Interval2);
     };
     buttonStop3.onclick = function() {
+      sound.play();
       clearInterval(Interval3);
     };
     buttonReset.onclick = function() {
