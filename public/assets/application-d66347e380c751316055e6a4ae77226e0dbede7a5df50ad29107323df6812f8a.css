@@ -9613,56 +9613,61 @@ section:after,
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
-/* line 8, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 7, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+table.admin-table tr td {
+  font-size: 20px;
+}
+
+/* line 9, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 img {
   margin: 0 auto;
 }
 
-/* line 13, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 14, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .navbar-brand {
   font-size: inherit;
 }
 
-/* line 38, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 39, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 main {
   padding-bottom: 80px;
   width: 100%;
   margin-top: 60px;
 }
 
-/* line 45, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 46, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 section {
   margin-top: 20px;
 }
 
-/* line 53, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 54, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .authform {
   padding-top: 30px;
   max-width: 320px;
   margin: 0 auto;
 }
 
-/* line 58, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 59, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .authform form {
   padding-bottom: 40px;
 }
 
-/* line 63, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 64, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 .authform .right {
   float: right !important;
 }
 
-/* line 77, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 78, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 #error_explanation h2 {
   font-size: 16px;
 }
 
-/* line 85, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 86, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 #calendar .fc-day.highlight-red {
   background-color: red;
 }
 
-/* line 90, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
+/* line 91, /myapp/app/assets/stylesheets/application_and_overrides.css.scss */
 h4 a {
   color: #8a6d3b;
 }
@@ -18345,7 +18350,7 @@ label {
 }
 /* Variabes */
 /* Mixin's */
-/* line 26, /myapp/app/assets/stylesheets/time_trials.scss */
+/* line 25, /myapp/app/assets/stylesheets/time_trials.scss */
 h1, h2 {
   color: #fff;
   font-family: 'Druk-Wide-Bold';
@@ -18353,24 +18358,24 @@ h1, h2 {
   text-transform: uppercase;
 }
 
-/* line 32, /myapp/app/assets/stylesheets/time_trials.scss */
+/* line 31, /myapp/app/assets/stylesheets/time_trials.scss */
 h3 {
   color: #fff;
   font-family: 'Druk-Wide-Bold';
   text-transform: uppercase;
 }
 
-/* line 38, /myapp/app/assets/stylesheets/time_trials.scss */
+/* line 37, /myapp/app/assets/stylesheets/time_trials.scss */
 #seconds, #tens {
   font-size: 2em;
 }
 
-/* line 41, /myapp/app/assets/stylesheets/time_trials.scss */
+/* line 40, /myapp/app/assets/stylesheets/time_trials.scss */
 #leaderboard {
   color: #fff;
 }
 
-/* line 44, /myapp/app/assets/stylesheets/time_trials.scss */
+/* line 43, /myapp/app/assets/stylesheets/time_trials.scss */
 .table > tbody > tr > td {
   border-top: 0px;
 }

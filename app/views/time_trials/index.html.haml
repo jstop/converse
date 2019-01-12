@@ -6,20 +6,20 @@
       %thead
         %tr
           %th 
-            %h4 Name
+            %h4{style: "font-family: Druk-Wide-Bold"} Name
           %th 
-            %h4 Time
+            %h4{style: "font-family: Druk-Wide-Bold"} Time
           %th 
 
       %tbody
         - @time_trials.each do |time_trial|
           %tr
             %td
-              %h4
+              %h4{style: "font-family: Druk-Wide-Medium"}
                 = time_trial.firstname
                 = time_trial.lastname
             %td
-              %h4
+              %h4{style: "font-family: Druk-Wide-Medium"}
                 = time_trial.time
   .col-md-1
   .col-md-6
@@ -27,14 +27,15 @@
     %table.table{style: "border-top: none important!"}
       %tbody
         %tr
-          %th 
+          %th{style: "border-top: none"}
             %h4 Players 
-          %th 
+          %th{style: "border-top: none"}
             %h4 Score
         %tr
           %td
             %h3
-              %span
+              %span{style: "border-top: none"}
+  
                 -if $contestant1First
                   ="#{ $contestant1First[0] }."
                   =$contestant1Last

@@ -4,9 +4,8 @@
 
 /* Variabes */
 $orange: #ffa600;
-$grey:#f3f3f3;
 $white: #fff;
-$base-color:$grey ;
+$base-color: black ;
 
 
 /* Mixin's */
@@ -42,5 +41,8 @@ h1, h2 {
 }
 .table > tbody > tr > td {
   border-top: 0px; 
+}
+h3.clock > span{
+  font-family: Druk-Wide-Bold
 }
 
