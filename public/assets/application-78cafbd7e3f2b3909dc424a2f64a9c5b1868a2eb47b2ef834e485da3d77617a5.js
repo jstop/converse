@@ -16865,17 +16865,20 @@ Copyright © 2018 Basecamp, LLC
 }).call(this);
 (function() {
   $(document).on('turbolinks:load', function() {
-    var Interval1, Interval2, Interval3, appendMinutes1, appendMinutes2, appendMinutes3, appendSeconds1, appendSeconds2, appendSeconds3, appendTens1, appendTens2, appendTens3, buttonReset, buttonStart, buttonStop1, buttonStop2, buttonStop3, contestant1Email, contestant1First, contestant1Last, contestant2Email, contestant2First, contestant2Last, contestant3Email, contestant3First, contestant3Last, minutes1, minutes2, minutes3, score1, seconds1, seconds2, seconds3, sound, startTimer1, startTimer2, startTimer3, submitScores, tens1, tens2, tens3;
+    var Interval1, Interval2, Interval3, appendMinutes1, appendMinutes2, appendMinutes3, appendSeconds1, appendSeconds2, appendSeconds3, appendTens1, appendTens2, appendTens3, buttonReset, buttonStart, buttonStop1, buttonStop2, buttonStop3, contestant1Cheater, contestant1Email, contestant1First, contestant1Last, contestant2Cheater, contestant2Email, contestant2First, contestant2Last, contestant3Cheater, contestant3Email, contestant3First, contestant3Last, minutes1, minutes2, minutes3, score1, seconds1, seconds2, seconds3, sound, startTimer1, startTimer2, startTimer3, submitScores, tens1, tens2, tens3;
     sound = document.getElementById("audio");
     contestant1First = $("#contestant1First").attr("value");
     contestant1Last = $("#contestant1Last").attr("value");
     contestant1Email = $("#contestant1Email").attr("value");
+    contestant1Cheater = $("#contestant1Cheater").attr("value");
     contestant2First = $("#contestant2First").attr("value");
     contestant2Last = $("#contestant2Last").attr("value");
     contestant2Email = $("#contestant2Email").attr("value");
+    contestant2Cheater = $("#contestant2Cheater").attr("value");
     contestant3First = $("#contestant3First").attr("value");
     contestant3Last = $("#contestant3Last").attr("value");
     contestant3Email = $("#contestant3Email").attr("value");
+    contestant3Cheater = $("#contestant3Cheater").attr("value");
     score1 = 0;
     minutes1 = 0;
     minutes2 = 0;
@@ -16905,6 +16908,19 @@ Copyright © 2018 Basecamp, LLC
     Interval2 = void 0;
     Interval3 = void 0;
     submitScores.onclick = function() {
+      var cseconds1, cseconds2, cseconds3;
+      cseconds1 = appendSeconds1.innerHTML;
+      cseconds2 = appendSeconds1.innerHTML;
+      cseconds3 = appendSeconds1.innerHTML;
+      if (contestant1Cheater === "1") {
+        cseconds1 = appendSeconds1.innerHTML - 15;
+      }
+      if (contestant2Cheater === "1") {
+        cseconds2 = appendSeconds2.innerHTML - 15;
+      }
+      if (contestant3Cheater === "1") {
+        cseconds3 = appendSeconds3.innerHTML - 15;
+      }
       $.ajax({
         url: '/time_trials.json',
         type: 'POST',
@@ -16913,7 +16929,8 @@ Copyright © 2018 Basecamp, LLC
             'firstname': contestant1First,
             'lastname': contestant1Last,
             'email': contestant1Email,
-            'time': appendMinutes1.innerHTML + ":" + appendSeconds1.innerHTML + ":" + appendTens1.innerHTML
+            'time': appendMinutes1.innerHTML + ":" + cseconds1 + ":" + appendTens1.innerHTML,
+            'cheater': "1" === contestant1Cheater
           }
         },
         success: function(data) {}
@@ -16926,7 +16943,8 @@ Copyright © 2018 Basecamp, LLC
             'firstname': contestant2First,
             'lastname': contestant2Last,
             'email': contestant2Email,
-            'time': appendMinutes2.innerHTML + ":" + appendSeconds2.innerHTML + ":" + appendTens2.innerHTML
+            'time': appendMinutes2.innerHTML + ":" + cseconds2 + ":" + appendTens2.innerHTML,
+            'cheater': "1" === contestant2Cheater
           }
         },
         success: function(data) {}
@@ -16939,7 +16957,8 @@ Copyright © 2018 Basecamp, LLC
             'firstname': contestant3First,
             'lastname': contestant3Last,
             'email': contestant3Email,
-            'time': appendMinutes3.innerHTML + ":" + appendSeconds3.innerHTML + ":" + appendTens3.innerHTML
+            'time': appendMinutes3.innerHTML + ":" + cseconds3 + ":" + appendTens3.innerHTML,
+            'cheater': "1" === contestant3Cheater
           }
         },
         success: function(data) {

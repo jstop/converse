@@ -12,6 +12,7 @@
         %th Lastname
         %th Email
         %th Time
+        %th Promotion
         %th
         %th
         %th
@@ -23,6 +24,9 @@
           %td= time_trial.lastname
           %td= time_trial.email
           %td= time_trial.time
+          %td
+            -if time_trial.cheater
+              &#10004;
           %td= link_to 'Show', time_trial
           %td= link_to 'Edit', edit_time_trial_path(time_trial)
           %td= link_to 'Destroy', time_trial, data: { confirm: 'Are you sure?' }, method: :delete

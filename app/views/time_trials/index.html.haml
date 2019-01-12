@@ -10,7 +10,6 @@
               %h4{style: "font-family: Druk-Wide-Bold"} Name
             %th 
               %h4{style: "font-family: Druk-Wide-Bold"} Time
-            %th 
 
         %tbody
           - @time_trials.each do |time_trial|
@@ -28,18 +27,23 @@
       %table.table{style: "border-top: none important!"}
         %tbody
           %tr
+            %th{style: "border-top: none; width: 100px;"}
             %th{style: "border-top: none"}
               %h4 Players 
             %th{style: "border-top: none"}
               %h4 Score
           %tr
+            %td{style: "padding-top: 20px"}
+              -if $contestant1Cheater == "1"
+                %span
+                  = image_tag("Converse_cursor.png", :alt => "rss feed") 
             %td
               %h3
                 %span{style: "border-top: none"}
-    
                   -if $contestant1First
                     ="#{ $contestant1First[0] }."
                     =$contestant1Last
+
             %td
               %h3.clock
                 %span#minutes1 0
@@ -50,6 +54,11 @@
             %td
               %button#button-stop1.btn.btn-default.btn-lg Finish
           %tr
+            %td{style: "padding-top: 20px"}
+              %h3
+              -if $contestant2Cheater == "1"
+                %span
+                  = image_tag("Converse_cursor.png", :alt => "rss feed") 
             %td
               %h3
                 %span
@@ -66,6 +75,10 @@
             %td
               %button#button-stop2.btn.btn-default.btn-lg Finish
           %tr
+            %td{style: "padding-top: 20px"}
+              -if $contestant3Cheater == "1"
+                %span
+                  = image_tag("Converse_cursor.png", :alt => "rss feed") 
             %td
               %h3
                 %span
@@ -97,11 +110,14 @@
   %input#contestant1First{type: :hidden, name: :contestant1First, :value => "#{$contestant1First}"}
   %input#contestant1Last{type: :hidden, name: :contestant1Last, :value => "#{$contestant1Last}"}
   %input#contestant1Email{type: :hidden, name: :contestant1Email, :value => "#{$contestant1Email}"}
+  %input#contestant1Cheater{type: :hidden, name: :contestant1Cheater, :value => "#{$contestant1Cheater}"}
 
   %input#contestant2First{type: :hidden, name: :contestant2First, :value => "#{$contestant2First}"}
   %input#contestant2Last{type: :hidden, name: :contestant2Last, :value => "#{$contestant2Last}"}
   %input#contestant2Email{type: :hidden, name: :contestant2Email, :value => "#{$contestant2Email}"}
+  %input#contestant2Cheater{type: :hidden, name: :contestant2Cheater, :value => "#{$contestant2Cheater}"}
 
   %input#contestant3First{type: :hidden, name: :contestant3First, :value => "#{$contestant3First}"}
   %input#contestant3Last{type: :hidden, name: :contestant3Last, :value => "#{$contestant3Last}"}
   %input#contestant3Email{type: :hidden, name: :contestant3Email, :value => "#{$contestant3Email}"}
+  %input#contestant3Cheater{type: :hidden, name: :contestant3Cheater, :value => "#{$contestant3Cheater}"}
