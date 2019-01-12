@@ -23,8 +23,8 @@
                   = time_trial.time.gsub! ':', ' : '
     .col-md-1
     .col-md-6
-      %h2.text-center Contestants
-      %table.table{style: "border-top: none important!"}
+      %h2.text-center{style: "margin-left: 110px"} Contestants
+      %table.table{style: "margin-left: 110px; border-top: none important!"}
         %tbody
           %tr
             %th{style: "border-top: none; width: 100px;"}
@@ -54,7 +54,7 @@
             %td
               %button#button-stop1.btn.btn-default.btn-lg Finish
           %tr
-            %td{style: "padding-top: 20px"}
+            %td{style: "padding-top: 0px"}
               %h3
               -if $contestant2Cheater == "1"
                 %span

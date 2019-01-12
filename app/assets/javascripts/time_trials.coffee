@@ -59,15 +59,32 @@ $(document).on 'turbolinks:load', ->
   Interval3 = undefined
 
   submitScores.onclick = ->
+    reward = 15
     cseconds1 = appendSeconds1.innerHTML
-    cseconds2 = appendSeconds1.innerHTML
-    cseconds3 = appendSeconds1.innerHTML
+    cseconds2 = appendSeconds2.innerHTML
+    cseconds3 = appendSeconds3.innerHTML
+    cminutes1 = appendMinutes1.innerHTML
+    cminutes2 =  appendMinutes2.innerHTML
+    cminutes3 = appendMinutes3.innerHTML
+
     if contestant1Cheater == "1"
-      cseconds1 = appendSeconds1.innerHTML - 15
+      if cseconds1 < reward
+        cminutes1 = cminutes1 - 1
+        cseconds1 = 60 + ( appendSeconds1.innerHTML - 15 )
+      else
+        cseconds1 = appendSeconds1.innerHTML - 15
     if contestant2Cheater == "1"
-      cseconds2 = appendSeconds2.innerHTML - 15
+      if cseconds2 < reward
+        cminutes2 = cminutes2 - 1
+        cseconds2 = 60 + ( appendSeconds2.innerHTML - 15 )
+      else
+        cseconds2 = appendSeconds2.innerHTML - 15
     if contestant3Cheater == "1"
-      cseconds3 = appendSeconds3.innerHTML - 15
+      if cseconds3 < reward
+        cminutes3 = cminutes3 - 1
+        cseconds3 = 60 + ( appendSeconds3.innerHTML - 15 )
+      else
+        cseconds3 = appendSeconds3.innerHTML - 15
     $.ajax
       url: '/time_trials.json'
       type: 'POST'
@@ -76,7 +93,7 @@ $(document).on 'turbolinks:load', ->
           'firstname': contestant1First
           'lastname': contestant1Last
           'email': contestant1Email
-          'time': appendMinutes1.innerHTML + ":" + cseconds1 + ":" + appendTens1.innerHTML
+          'time': cminutes1 + ":" + cseconds1 + ":" + appendTens1.innerHTML
           'cheater': ("1" == contestant1Cheater)
       success: (data) ->
         return
@@ -88,7 +105,7 @@ $(document).on 'turbolinks:load', ->
           'firstname': contestant2First
           'lastname': contestant2Last
           'email': contestant2Email
-          'time': appendMinutes2.innerHTML + ":" + cseconds2 + ":" + appendTens2.innerHTML
+          'time': cminutes2 + ":" + cseconds2 + ":" + appendTens2.innerHTML
           'cheater': ("1" == contestant2Cheater)
       success: (data) ->
     $.ajax
@@ -99,7 +116,7 @@ $(document).on 'turbolinks:load', ->
           'firstname': contestant3First
           'lastname': contestant3Last
           'email': contestant3Email
-          'time': appendMinutes3.innerHTML + ":" + cseconds3 + ":" + appendTens3.innerHTML
+          'time': cminutes3 + ":" + cseconds3 + ":" + appendTens3.innerHTML
           'cheater': ("1" == contestant3Cheater)
       success: (data) ->
         location.reload();
