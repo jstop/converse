@@ -20,7 +20,7 @@
                 = time_trial.lastname
             %td
               %h4{style: "font-family: Druk-Wide-Medium"}
-                = time_trial.time
+                = time_trial.time.gsub! ':', ' : '
   .col-md-1
   .col-md-6
     %h2.text-center Contestants
