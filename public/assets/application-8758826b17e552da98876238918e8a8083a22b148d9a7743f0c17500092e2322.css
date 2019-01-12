@@ -40,6 +40,10 @@
   font-family: "Druk-Wide-Super";
   src: url(/assets/Druk-Wide-Super-6863a68341a3279d49ba112b2b96b3e67be7e428b10b9c6611781f9b1639eaf7.otf) format("truetype");
 }
+@font-face {
+  font-family: "Akkurat-Mono";
+  src: url(/assets/AKKURAT-Mono-2c7aae1ac3aafd58c258e92c15bcf829a95b7cbc5c5719d825fd78678453df3b.otf) format("truetype");
+}
 /*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -18289,36 +18293,36 @@ pre {
   font-size: 11px;
 }
 
-/* line 29, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 28, /myapp/app/assets/stylesheets/scaffolds.scss */
 th {
   padding-bottom: 5px;
 }
 
-/* line 33, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 32, /myapp/app/assets/stylesheets/scaffolds.scss */
 td {
   padding-bottom: 7px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* line 40, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 39, /myapp/app/assets/stylesheets/scaffolds.scss */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 45, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 44, /myapp/app/assets/stylesheets/scaffolds.scss */
 #notice {
   color: green;
 }
 
-/* line 49, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 48, /myapp/app/assets/stylesheets/scaffolds.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 55, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 54, /myapp/app/assets/stylesheets/scaffolds.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -18327,7 +18331,7 @@ div.field, div.actions {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 63, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 62, /myapp/app/assets/stylesheets/scaffolds.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -18338,13 +18342,13 @@ div.field, div.actions {
   background-color: #c00;
   color: #fff;
 }
-/* line 74, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 73, /myapp/app/assets/stylesheets/scaffolds.scss */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
 }
 
-/* line 80, /myapp/app/assets/stylesheets/scaffolds.scss */
+/* line 79, /myapp/app/assets/stylesheets/scaffolds.scss */
 label {
   display: block;
 }
@@ -18378,4 +18382,14 @@ h3 {
 /* line 43, /myapp/app/assets/stylesheets/time_trials.scss */
 .table > tbody > tr > td {
   border-top: 0px;
+}
+
+/* line 46, /myapp/app/assets/stylesheets/time_trials.scss */
+h3.clock > span {
+  font-family: Druk-Wide-Bold;
+}
+
+/* line 49, /myapp/app/assets/stylesheets/time_trials.scss */
+#contest {
+  cursor: url(/assets/Converse_cursor-feafbe9a8a5dca5b56495e9958f04f16eb08896bb86e0c5d49b2d7574b887460.png) 20 20, auto;
 }

@@ -1,106 +1,107 @@
 %audio#audio{src: "http://www.wavsource.com/snds_2018-06-03_5106726768923853/sfx/buzzer_x.wav", autostart: "false"}
-.row
-  .col-md-5
-    %h2.text-center Leader Board
-    %table.table
-      %thead
-        %tr
-          %th 
-            %h4{style: "font-family: Druk-Wide-Bold"} Name
-          %th 
-            %h4{style: "font-family: Druk-Wide-Bold"} Time
-          %th 
+#contest
+  .row
+    .col-md-5
+      %h2.text-center Leader Board
+      %table.table
+        %thead
+          %tr
+            %th 
+              %h4{style: "font-family: Druk-Wide-Bold"} Name
+            %th 
+              %h4{style: "font-family: Druk-Wide-Bold"} Time
+            %th 
 
-      %tbody
-        - @time_trials.each do |time_trial|
+        %tbody
+          - @time_trials.each do |time_trial|
+            %tr
+              %td
+                %h4{style: "font-family: Druk-Wide-Medium"}
+                  = time_trial.firstname
+                  = time_trial.lastname
+              %td
+                %h4{style: "font-family: Druk-Wide-Medium"}
+                  = time_trial.time.gsub! ':', ' : '
+    .col-md-1
+    .col-md-6
+      %h2.text-center Contestants
+      %table.table{style: "border-top: none important!"}
+        %tbody
+          %tr
+            %th{style: "border-top: none"}
+              %h4 Players 
+            %th{style: "border-top: none"}
+              %h4 Score
           %tr
             %td
-              %h4{style: "font-family: Druk-Wide-Medium"}
-                = time_trial.firstname
-                = time_trial.lastname
+              %h3
+                %span{style: "border-top: none"}
+    
+                  -if $contestant1First
+                    ="#{ $contestant1First[0] }."
+                    =$contestant1Last
             %td
-              %h4{style: "font-family: Druk-Wide-Medium"}
-                = time_trial.time.gsub! ':', ' : '
-  .col-md-1
-  .col-md-6
-    %h2.text-center Contestants
-    %table.table{style: "border-top: none important!"}
-      %tbody
-        %tr
-          %th{style: "border-top: none"}
-            %h4 Players 
-          %th{style: "border-top: none"}
-            %h4 Score
-        %tr
-          %td
-            %h3
-              %span{style: "border-top: none"}
-  
-                -if $contestant1First
-                  ="#{ $contestant1First[0] }."
-                  =$contestant1Last
-          %td
-            %h3.clock
-              %span#minutes1 0
-              \:
-              %span#seconds1 00
-              \:
-              %span#tens1 00
-          %td
-            %button#button-stop1.btn.btn-default.btn-lg Finish
-        %tr
-          %td
-            %h3
-              %span
-                -if $contestant2First
-                  ="#{ $contestant2First[0] }."
-                  =$contestant2Last
-          %td{style: "width: 285px"}
-            %h3.clock
-              %span#minutes2 0
-              \:
-              %span#seconds2 00
-              \:
-              %span#tens2 00
-          %td
-            %button#button-stop2.btn.btn-default.btn-lg Finish
-        %tr
-          %td
-            %h3
-              %span
-                -if $contestant3First
-                  ="#{ $contestant3First[0] }."
-                  =$contestant3Last
-          %td
-            %h3.clock
-              %span#minutes3 0
-              \:
-              %span#seconds3 00
-              \:
-              %span#tens3 00
-          %td
-            %button#button-stop3.btn.btn-default.btn-lg Finish
-.row{style: "margin-top: 150px"}
-  .col-md-9
-  .col-md-3
-    %table.table{style: "margin-top: 220px"}
-      %tbody
-        %tr
-          %td
-            %button#button-start.pull-right.btn.btn-default.btn-lg Start
-          %td
-            %button#button-reset.pull-right.btn.btn-default.btn-lg Reset
-          %td
-            %button#button-submit.pull-right.btn.btn-default.btn-lg Submit Scores
+              %h3.clock
+                %span#minutes1 0
+                \:
+                %span#seconds1 00
+                \:
+                %span#tens1 00
+            %td
+              %button#button-stop1.btn.btn-default.btn-lg Finish
+          %tr
+            %td
+              %h3
+                %span
+                  -if $contestant2First
+                    ="#{ $contestant2First[0] }."
+                    =$contestant2Last
+            %td{style: "width: 285px"}
+              %h3.clock
+                %span#minutes2 0
+                \:
+                %span#seconds2 00
+                \:
+                %span#tens2 00
+            %td
+              %button#button-stop2.btn.btn-default.btn-lg Finish
+          %tr
+            %td
+              %h3
+                %span
+                  -if $contestant3First
+                    ="#{ $contestant3First[0] }."
+                    =$contestant3Last
+            %td
+              %h3.clock
+                %span#minutes3 0
+                \:
+                %span#seconds3 00
+                \:
+                %span#tens3 00
+            %td
+              %button#button-stop3.btn.btn-default.btn-lg Finish
+  .row{style: "margin-top: 150px"}
+    .col-md-9
+    .col-md-3
+      %table.table{style: "margin-top: 220px"}
+        %tbody
+          %tr
+            %td
+              %button#button-start.pull-right.btn.btn-default.btn-lg Start
+            %td
+              %button#button-reset.pull-right.btn.btn-default.btn-lg Reset
+            %td
+              %button#button-submit.pull-right.btn.btn-default.btn-lg Submit Scores
 
-%input#contestant1First{type: :hidden, name: :contestant1First, :value => "#{$contestant1First}"}
-%input#contestant1Last{type: :hidden, name: :contestant1Last, :value => "#{$contestant1Last}"}
-%input#contestant1Email{type: :hidden, name: :contestant1Email, :value => "#{$contestant1Email}"}
+  %input#contestant1First{type: :hidden, name: :contestant1First, :value => "#{$contestant1First}"}
+  %input#contestant1Last{type: :hidden, name: :contestant1Last, :value => "#{$contestant1Last}"}
+  %input#contestant1Email{type: :hidden, name: :contestant1Email, :value => "#{$contestant1Email}"}
 
-%input#contestant2First{type: :hidden, name: :contestant2First, :value => "#{$contestant2First}"}
-%input#contestant2Last{type: :hidden, name: :contestant2Last, :value => "#{$contestant2Last}"}
-%input#contestant2Email{type: :hidden, name: :contestant2Email, :value => "#{$contestant2Email}"}
+  %input#contestant2First{type: :hidden, name: :contestant2First, :value => "#{$contestant2First}"}
+  %input#contestant2Last{type: :hidden, name: :contestant2Last, :value => "#{$contestant2Last}"}
+  %input#contestant2Email{type: :hidden, name: :contestant2Email, :value => "#{$contestant2Email}"}
 
-%input#contestant3First{type: :hidden, name: :contestant3First, :value => "#{$contestant3First}"}
-%input#contestant3Last{type: :hidden, name: :contestant3Last, :value => "#{$contestant3Last}"}
-%input#contestant3Email{type: :hidden, name: :contestant3Email, :value => "#{$contestant3Email}"}
+  %input#contestant3First{type: :hidden, name: :contestant3First, :value => "#{$contestant3First}"}
+  %input#contestant3Last{type: :hidden, name: :contestant3Last, :value => "#{$contestant3Last}"}
+  %input#contestant3Email{type: :hidden, name: :contestant3Email, :value => "#{$contestant3Email}"}
